@@ -9,8 +9,6 @@ type SbomReport interface {
 	Report() string
 }
 
-
-
 func main() {
 	filename := os.Args[1]
 	fmt.Printf("Reading %s\n", filename)
