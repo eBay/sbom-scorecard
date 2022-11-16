@@ -26,11 +26,11 @@ func (r *SpdxReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
 	sb.WriteString(fmt.Sprintf("%d total files\n", r.totalFiles))
-	sb.WriteString(fmt.Sprintf("%d%%%% have licenses.\n", prettyPercent(r.hasLicense, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%%%% have package digest.\n", prettyPercent(r.hasPackDigest, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%%%% have purls.\n", prettyPercent(r.hasPurl, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%%%% have CPEs.\n", prettyPercent(r.hasCPE, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%%%% have file digest.\n", prettyPercent(r.hasFileDigest, r.totalFiles)))
+	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", prettyPercent(r.hasLicense, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", prettyPercent(r.hasPackDigest, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", prettyPercent(r.hasPurl, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", prettyPercent(r.hasCPE, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have file digest.\n", prettyPercent(r.hasFileDigest, r.totalFiles)))
 	sb.WriteString(fmt.Sprintf("Spec valid? %v\n", r.valid))
 	return sb.String()
 }
