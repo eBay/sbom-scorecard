@@ -13,7 +13,70 @@ Here are the metrics by which we score. This is evolving.
 
 1. Is it a spec-compliant?
 2. Does it have information about how it was generated?
+   1. Does it have the software that was used?
+   2. Do we know the version/sha of that software?
 3. For the packages:
-    1. do they have ids defined (purls, etc)?
-    2. Do they have licenses defined?
-    3. Do they have versions?
+    1. Do they have ids defined (purls, etc)?
+    2. Do they have versions and/or shas?
+    3. Do they have licenses defined?
+
+We weight these differently.
+
+Spec compliance is weighted 25%.
+Information about how an sbom was generated is worth 15%.
+The remaining 60% is split across the packages who are direct dependencies.
+
+
+### Examples
+
+In this example, from the Julia project..
+```
+34 total packages
+0 total files
+100% have licenses.
+0% have package digest.
+0% have purls.
+0% have CPEs.
+0% have file digest.
+Spec valid? true
+```
+
+This would result in:
+| Criteria        | Result | Points |
+|-----------------|--------|--------|
+| Spec compliant  | true   | 25     |
+| Generation Info | N/A    | N/A    |
+| Packages        |        |        |
+| ...IDs          | 0%     | 0      |
+| ...verions      | 0%     | 0      |
+| ...licenses     | 100%   | 20     |
+
+So a total of 48/88 (because we don't have generation info implemented yet) or 54%.
+
+
+This example is from the dropwizard project:
+```
+167 total packages
+79% have licenses.
+100% have package digest.
+100% have purls.
+0% have CPEs.
+Spec valid? true
+```
+
+This results in:
+| Criteria        | Result             | Points |
+|-----------------|--------------------|--------|
+| Spec compliant  | true               | 30     |
+| Generation Info | N/A                | N/A    |
+| Packages        |                    |        |
+| ...IDs          | 50% (missing CPEs) | 10     |
+| ...verions      | 100%               | 20     |
+| ...licenses     | 79%                | 16     |
+
+That's 76 out of a possible 90, so 84%.
+
+## Open Questions
+1. Should we preference towards purls or CPEs? Both?
+2. Should package info really be split?
+3. Should we break "license info" out as it's own top-level criteria?
