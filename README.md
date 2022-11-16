@@ -44,14 +44,14 @@ Spec valid? true
 This would result in:
 | Criteria        | Result | Points |
 |-----------------|--------|--------|
-| Spec compliant  | true   | 25     |
-| Generation Info | N/A    | N/A    |
+| Spec compliant  | true   | 25/25  |
+| Generation Info | N/A    | 15/15  |
 | Packages        |        |        |
-| ...IDs          | 0%     | 0      |
-| ...verions      | 0%     | 0      |
-| ...licenses     | 100%   | 20     |
+| ...IDs          | 0%     | 0/20   |
+| ...verions      | 0%     | 0/20   |
+| ...licenses     | 100%   | 20/20  |
 
-So a total of 48/88 (because we don't have generation info implemented yet) or 54%.
+So that's 60% (including the whole 15% because we don't have generation info implemented yet)
 
 
 This example is from the dropwizard project:
@@ -67,14 +67,14 @@ Spec valid? true
 This results in:
 | Criteria        | Result             | Points |
 |-----------------|--------------------|--------|
-| Spec compliant  | true               | 30     |
-| Generation Info | N/A                | N/A    |
+| Spec compliant  | true               | 25/25  |
+| Generation Info | N/A                | 15/15  |
 | Packages        |                    |        |
-| ...IDs          | 50% (missing CPEs) | 10     |
-| ...verions      | 100%               | 20     |
-| ...licenses     | 79%                | 16     |
+| ...IDs          | 50% (missing CPEs) | 10/20  |
+| ...verions      | 100%               | 20/20  |
+| ...licenses     | 79%                | 16/20  |
 
-That's 76 out of a possible 90, so 84%.
+So that's 86% (including the 15% b/c generation info isn't implemented).
 
 ## Open Questions
 1. Should we preference towards purls or CPEs? Both?
