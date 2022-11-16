@@ -48,37 +48,40 @@ func GetSpdxReport(filename string) SbomReport {
 	// // try to load the SPDX file's contents as a json file, version 2.2
 	spdxDoc, err := spdx_json.Load2_2(bytes.NewReader(byteValue))
 	sr.valid = err == nil
+	if spdxDoc != nil {
+		if len(spdxDoc.Packages) > 0 {
+			for _, p := range spdxDoc.Packages {
+				sr.totalPackages += 1
+				if p.PackageLicenseConcluded != "NONE" &&
+					p.PackageLicenseConcluded != "NOASSERTION" &&
+					p.PackageLicenseConcluded != "" {
+					sr.hasLicense += 1
+				}
 
-	for _, p := range spdxDoc.Packages {
-		sr.totalPackages += 1
-		if p.PackageLicenseConcluded != "NONE" &&
-			p.PackageLicenseConcluded != "NOASSERTION" &&
-			p.PackageLicenseConcluded != "" {
-			sr.hasLicense += 1
-		}
+				if len(p.PackageChecksums) > 0 {
+					sr.hasPackDigest += 1
+				}
 
-		if len(p.PackageChecksums) > 0 {
-			sr.hasPackDigest += 1
-		}
+				for _, ref := range p.PackageExternalReferences {
+					if ref.RefType == spdx_common.TypePackageManagerPURL {
+						sr.hasPurl += 1
+					}
+				}
 
-		for _, ref := range p.PackageExternalReferences {
-			if ref.RefType == spdx_common.TypePackageManagerPURL {
-				sr.hasPurl += 1
+				for _, ref := range p.PackageExternalReferences {
+					if strings.HasPrefix(ref.RefType, "cpe") {
+						sr.hasCPE += 1
+						break
+					}
+				}
 			}
 		}
 
-		for _, ref := range p.PackageExternalReferences {
-			if strings.HasPrefix(ref.RefType, "cpe") {
-				sr.hasCPE += 1
-				break
+		for _, file := range spdxDoc.Files {
+			sr.totalFiles += 1
+			if len(file.Checksums) > 0 {
+				sr.hasFileDigest += 1
 			}
-		}
-	}
-
-	for _, file := range spdxDoc.Files {
-		sr.totalFiles += 1
-		if len(file.Checksums) > 0 {
-			sr.hasFileDigest += 1
 		}
 	}
 
