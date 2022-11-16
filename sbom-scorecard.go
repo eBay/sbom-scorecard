@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 type SbomReport interface {
@@ -12,9 +13,13 @@ type SbomReport interface {
 func main() {
 	filename := os.Args[1]
 	fmt.Printf("Reading %s\n", filename)
+	var r SbomReport
 
-	// TODO: Logic to dispatch across file names & types
-	r := GetSpdxReport(filename)
+	if strings.Contains(filename, "spdx") {
+		r = GetSpdxReport(filename)
+	} else if strings.Contains(filename, "cyclonedx") {
+		r = GetCycloneDXReport(filename)
+	}
 
 	fmt.Printf(r.Report())
 }
