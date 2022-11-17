@@ -1,4 +1,4 @@
-package main
+package spdx
 
 import (
 	"bytes"
@@ -9,6 +9,7 @@ import (
 
 	spdx_json "github.com/spdx/tools-golang/json"
 	spdx_common "github.com/spdx/tools-golang/spdx/common"
+	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 )
 
 type SpdxReport struct {
@@ -26,16 +27,16 @@ func (r *SpdxReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
 	sb.WriteString(fmt.Sprintf("%d total files\n", r.totalFiles))
-	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", prettyPercent(r.hasLicense, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", prettyPercent(r.hasPackDigest, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", prettyPercent(r.hasPurl, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", prettyPercent(r.hasCPE, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have file digest.\n", prettyPercent(r.hasFileDigest, r.totalFiles)))
+	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", scorecard.PrettyPercent(r.hasLicense, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", scorecard.PrettyPercent(r.hasPackDigest, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", scorecard.PrettyPercent(r.hasPurl, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", scorecard.PrettyPercent(r.hasCPE, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have file digest.\n", scorecard.PrettyPercent(r.hasFileDigest, r.totalFiles)))
 	sb.WriteString(fmt.Sprintf("Spec valid? %v\n", r.valid))
 	return sb.String()
 }
 
-func GetSpdxReport(filename string) SbomReport {
+func GetSpdxReport(filename string) scorecard.SbomReport {
 	f, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("Error while opening %v for reading: %v", filename, err)

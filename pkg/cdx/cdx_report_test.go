@@ -1,12 +1,12 @@
-package main
+package cdx
 
 import (
-	"testing"
 	"strings"
+	"testing"
 )
 
 func TestCycloneE2e(t *testing.T) {
-	r := GetCycloneDXReport("./examples/dropwizard.cyclonedx.json")
+	r := GetCycloneDXReport("../../examples/dropwizard.cyclonedx.json")
 
 	report_text := r.Report()
 
