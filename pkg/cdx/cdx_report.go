@@ -1,35 +1,36 @@
-package main
+package cdx
 
 import (
-	"os"
 	"fmt"
-	cdx "github.com/CycloneDX/cyclonedx-go"
+	"os"
 	"strings"
+
+	cdx "github.com/CycloneDX/cyclonedx-go"
+	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 )
 
-
 type CycloneDXReport struct {
-	valid bool
+	valid         bool
 	totalPackages int
-	hasLicense int
+	hasLicense    int
 	hasPackDigest int
-	hasPurl int
-	hasCPE int
+	hasPurl       int
+	hasCPE        int
 }
 
 func (r *CycloneDXReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
-	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", prettyPercent(r.hasLicense, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", prettyPercent(r.hasPackDigest, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", prettyPercent(r.hasPurl, r.totalPackages)))
-	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", prettyPercent(r.hasCPE, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", scorecard.PrettyPercent(r.hasLicense, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", scorecard.PrettyPercent(r.hasPackDigest, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", scorecard.PrettyPercent(r.hasPurl, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", scorecard.PrettyPercent(r.hasCPE, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("Spec valid? %v\n", r.valid))
 	return sb.String()
 
 }
- 
-func GetCycloneDXReport(filename string) SbomReport {
+
+func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	f, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("Error while opening %v for reading: %v", filename, err)
@@ -43,7 +44,7 @@ func GetCycloneDXReport(filename string) SbomReport {
 	decoder := cdx.NewBOMDecoder(f, cdx.BOMFileFormatJSON)
 	if err = decoder.Decode(bom); err != nil {
 		r.valid = false
-		return &r;
+		return &r
 	}
 	r.valid = true
 

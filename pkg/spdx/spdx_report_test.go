@@ -1,4 +1,4 @@
-package main
+package spdx
 
 import (
 	"strings"
@@ -6,7 +6,7 @@ import (
 )
 
 func TestSpdxE2e(t *testing.T) {
-	r := GetSpdxReport("./examples/julia.spdx.json")
+	r := GetSpdxReport("../../examples/julia.spdx.json")
 	report_text := r.Report()
 
 	if strings.Trim(report_text, " \n") != `34 total packages

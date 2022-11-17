@@ -1,3 +1,24 @@
+VERSION=$(shell git describe --tags --always)
+COMMIT=$(shell git rev-parse HEAD)
+BUILD=$(shell date +%FT%T%z)
+PKG=github.com/guacsec/guac
+
+LDFLAGS="-X $(PKG).version=$(VERSION) -X $(PKG).commit=$(COMMIT) -X $(PKG).date=$(BUILD)"
+
+.DEFAULT_GOAL := build
+
+.PHONY: build
+build: ## Build a version
+	go build -ldflags ${LDFLAGS} -o bin/sbom-scorecard cmd/sbom-scorecard/main.go
+
+.PHONY: clean
+clean: ## Remove temporary files
+	go clean
+
+.PHONY: test
+test: ## Run the unit tests
+	echo 'mode: atomic' > coverage.txt && go test -covermode=atomic -coverprofile=coverage.txt -v -race -timeout=30s ./...
+
 phony:
 	@echo Use specific targets to download individual needed files.
 
