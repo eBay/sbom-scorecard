@@ -48,7 +48,7 @@ This would result in:
 | Generation Info | N/A    | 15/15  |
 | Packages        |        |        |
 | ...IDs          | 0%     | 0/20   |
-| ...verions      | 0%     | 0/20   |
+| ...versions      | 0%     | 0/20   |
 | ...licenses     | 100%   | 20/20  |
 
 So that's 60% (including the whole 15% because we don't have generation info implemented yet)
@@ -71,7 +71,7 @@ This results in:
 | Generation Info | N/A                | 15/15  |
 | Packages        |                    |        |
 | ...IDs          | 50% (missing CPEs) | 10/20  |
-| ...verions      | 100%               | 20/20  |
+| ...versions      | 100%               | 20/20  |
 | ...licenses     | 79%                | 16/20  |
 
 So that's 86% (including the 15% b/c generation info isn't implemented).

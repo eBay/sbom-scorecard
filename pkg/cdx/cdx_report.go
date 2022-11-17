@@ -11,6 +11,7 @@ import (
 
 type CycloneDXReport struct {
 	valid         bool
+	docError      error
 	totalPackages int
 	hasLicense    int
 	hasPackDigest int
@@ -27,7 +28,38 @@ func (r *CycloneDXReport) Report() string {
 	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", scorecard.PrettyPercent(r.hasCPE, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("Spec valid? %v\n", r.valid))
 	return sb.String()
+}
 
+func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
+	if r.docError != nil {
+		return scorecard.ReportValue{
+			Ratio: 0,
+			Reasoning: r.docError.Error(),
+		}
+	}
+	return scorecard.ReportValue{Ratio:1}
+}
+
+func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
+	purlPercent := scorecard.PrettyPercent(r.hasPurl, r.totalPackages)
+	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
+	return scorecard.ReportValue{
+		// What percentage has both Purl & CPEs?
+		Ratio: float32(r.hasPurl + r.hasCPE) / float32(r.totalPackages * 2),
+		Reasoning: fmt.Sprintf("%d%% have purls and %d%% have CPEs", purlPercent, cpePercent),
+	}
+}
+
+func (r *CycloneDXReport) PackageVersions() scorecard.ReportValue {
+	return scorecard.ReportValue{
+		Ratio: float32(r.hasPackDigest) / float32(r.totalPackages),
+	}
+}
+
+func (r *CycloneDXReport) PackageLicenses() scorecard.ReportValue {
+	return scorecard.ReportValue{
+		Ratio: float32(r.hasLicense) / float32(r.totalPackages),
+	}
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
@@ -44,6 +76,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	decoder := cdx.NewBOMDecoder(f, cdx.BOMFileFormatJSON)
 	if err = decoder.Decode(bom); err != nil {
 		r.valid = false
+		r.docError = err
 		return &r
 	}
 	r.valid = true

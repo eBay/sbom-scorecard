@@ -8,6 +8,7 @@ import (
 	"opensource.ebay.com/sbom-scorecard/pkg/cdx"
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 	"opensource.ebay.com/sbom-scorecard/pkg/spdx"
+	"errors"
 )
 
 var flags = struct {
@@ -46,13 +47,18 @@ var scoreCmd = &cobra.Command{
 			r = cdx.GetCycloneDXReport(opts.path)
 		}
 
-		fmt.Print(r.Report())
+		print(r.Report())
+		print("==\n")
+		print(scorecard.Grade(r))
 	},
 }
 
 func validateFlags(args []string) (options, error) {
 	var opts options
 	opts.sbomType = flags.sbomType
+	if (flags.sbomType != "spdx" && flags.sbomType != "cdx") {
+		return opts, errors.New(fmt.Sprintf("Unknown sbomType %s", flags.sbomType))
+	}
 	if len(args) != 1 {
 		return opts, fmt.Errorf("expected positional argument for file_path")
 	}
