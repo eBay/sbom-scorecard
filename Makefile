@@ -1,7 +1,8 @@
 VERSION=$(shell git describe --tags --always)
 COMMIT=$(shell git rev-parse HEAD)
 BUILD=$(shell date +%FT%T%z)
-PKG=github.com/guacsec/guac
+PKG=github.com/eBay/sbom-scorecard
+
 
 LDFLAGS="-X $(PKG).version=$(VERSION) -X $(PKG).commit=$(COMMIT) -X $(PKG).date=$(BUILD)"
 
