@@ -18,7 +18,7 @@ goos: linux
 goarch: amd64
 
 # (Optional) Entrypoint to compile.
-# main: ./path/to/main.go
+main: ./cmd/sbom-scorecard/main.go
 
 # (Optional) Working directory. (default: root of the project)
 # dir: ./relative/path/to/dir
