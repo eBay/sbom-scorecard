@@ -4,22 +4,23 @@ import (
 	"fmt"
 	"os"
 
+	"errors"
+
 	"github.com/spf13/cobra"
 	"opensource.ebay.com/sbom-scorecard/pkg/cdx"
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 	"opensource.ebay.com/sbom-scorecard/pkg/spdx"
-	"errors"
 )
 
 var flags = struct {
-	sbomType string
+	sbomType     string
 	outputFormat string
 }{}
 
 type options struct {
 	sbomType string
 	// path to file being evaluated
-	path string
+	path         string
 	outputFormat string
 }
 
@@ -61,7 +62,7 @@ var scoreCmd = &cobra.Command{
 func validateFlags(args []string) (options, error) {
 	var opts options
 	opts.sbomType = flags.sbomType
-	if (flags.sbomType != "spdx" && flags.sbomType != "cdx") {
+	if flags.sbomType != "spdx" && flags.sbomType != "cdx" {
 		return opts, errors.New(fmt.Sprintf("Unknown sbomType %s", flags.sbomType))
 	}
 
