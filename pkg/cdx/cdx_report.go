@@ -84,7 +84,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	if bom.Components != nil {
 		for _, p := range *bom.Components {
 			r.totalPackages += 1
-			if len(*p.Licenses) > 0 {
+			if p.Licenses != nil && len(*p.Licenses) > 0 {
 				r.hasLicense += 1
 			}
 			if len(*p.Hashes) > 0 {
