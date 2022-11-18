@@ -50,7 +50,7 @@ var scoreCmd = &cobra.Command{
 		}
 
 		if opts.outputFormat == "json" {
-			print(scorecard.JsonGrade(r))
+			fmt.Println(scorecard.JsonGrade(r))
 		} else {
 			print(r.Report())
 			print("==\n")
