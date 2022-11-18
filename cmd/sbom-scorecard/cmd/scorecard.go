@@ -13,16 +13,19 @@ import (
 
 var flags = struct {
 	sbomType string
+	outputFormat string
 }{}
 
 type options struct {
 	sbomType string
 	// path to file being evaluated
 	path string
+	outputFormat string
 }
 
 func init() {
 	scoreCmd.PersistentFlags().StringVar(&flags.sbomType, "sbomtype", "spdx", "type of sbom being evaluated")
+	scoreCmd.PersistentFlags().StringVar(&flags.outputFormat, "outputFormat", "text", "format to output")
 	_ = scoreCmd.MarkPersistentFlagRequired("sbomType")
 }
 
@@ -40,16 +43,18 @@ var scoreCmd = &cobra.Command{
 		var r scorecard.SbomReport
 		switch opts.sbomType {
 		case "spdx":
-			fmt.Printf("Reading SPDX SBOM %s\n", opts.path)
 			r = spdx.GetSpdxReport(opts.path)
 		case "cdx":
-			fmt.Printf("Reading CDX SBOM %s\n", opts.path)
 			r = cdx.GetCycloneDXReport(opts.path)
 		}
 
-		print(r.Report())
-		print("==\n")
-		print(scorecard.Grade(r))
+		if opts.outputFormat == "json" {
+			print(scorecard.JsonGrade(r))
+		} else {
+			print(r.Report())
+			print("==\n")
+			print(scorecard.Grade(r))
+		}
 	},
 }
 
@@ -59,6 +64,12 @@ func validateFlags(args []string) (options, error) {
 	if (flags.sbomType != "spdx" && flags.sbomType != "cdx") {
 		return opts, errors.New(fmt.Sprintf("Unknown sbomType %s", flags.sbomType))
 	}
+
+	opts.outputFormat = flags.outputFormat
+	if flags.outputFormat != "text" && flags.outputFormat != "json" {
+		return opts, errors.New(fmt.Sprintf("Unknown outputFormat %s", flags.outputFormat))
+	}
+
 	if len(args) != 1 {
 		return opts, fmt.Errorf("expected positional argument for file_path")
 	}
