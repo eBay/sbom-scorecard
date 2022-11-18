@@ -43,18 +43,6 @@ type ReportResult struct {
 	Total                 ScoreValue
 }
 
-func getReportValueInfo(title string, rv ReportValue, maxPoints float32) (string, int) {
-	sc := int(rv.Ratio * maxPoints)
-
-	var sb strings.Builder
-	sb.WriteString(fmt.Sprintf("%s: %d/%d", title, sc, int(maxPoints)))
-	if rv.Reasoning != "" {
-		sb.WriteString(fmt.Sprintf(" (%s)", rv.Reasoning))
-	}
-	sb.WriteString("\n")
-	return sb.String(), sc
-}
-
 func reportValueToScore(rv ReportValue, maxPoints float32) ScoreValue {
 	sv := ScoreValue{
 		MaxPoints: maxPoints,
@@ -99,27 +87,26 @@ func JsonGrade(sr SbomReport) string {
 	return string(out)
 }
 
+func getReportValueInfo(title string, sv ScoreValue) string {
+	var sb strings.Builder
+	sb.WriteString(fmt.Sprintf("%s: %d/%d", title, int(sv.Score()), int(sv.MaxPoints)))
+	if sv.Reasoning != "" {
+		sb.WriteString(fmt.Sprintf(" (%s)", sv.Reasoning))
+	}
+	sb.WriteString("\n")
+	return sb.String()
+}
+
 func Grade(sr SbomReport) string {
-	points := 0
+	sv := getScore(sr)
 	var sb strings.Builder
 
-	output, score := getReportValueInfo("Spec Compliance", sr.IsSpecCompliant(), validPoints)
-	points += score
-	sb.WriteString(output)
+	sb.WriteString(getReportValueInfo("Spec Compliance", sv.Compliance))
+	sb.WriteString(getReportValueInfo("Package ID", sv.PackageIdentification))
+	sb.WriteString(getReportValueInfo("Package Versions", sv.PackageVersions))
+	sb.WriteString(getReportValueInfo("Package Licenses", sv.PackageLicenses))
 
-	output, score = getReportValueInfo("Package ID", sr.PackageIdentification(), packageSectionWeight)
-	points += score
-	sb.WriteString(output)
-
-	output, score = getReportValueInfo("Package Versions", sr.PackageVersions(), packageSectionWeight)
-	points += score
-	sb.WriteString(output)
-
-	output, score = getReportValueInfo("Package Licenses", sr.PackageLicenses(), packageSectionWeight)
-	points += score
-	sb.WriteString(output)
-
-	sb.WriteString(fmt.Sprintf("Total points: %d/%d or %d%%\n", points, maxPoints, PrettyPercent(points, maxPoints)))
+	sb.WriteString(fmt.Sprintf("Total points: %d/%d or %d%%\n", int(sv.Total.Score()), int(sv.Total.MaxPoints), PrettyPercent(int(sv.Total.Score()), maxPoints)))
 
 	return sb.String()
 }
