@@ -3,6 +3,7 @@ package spdx
 import (
 	"strings"
 	"testing"
+
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 )
 
@@ -17,7 +18,8 @@ func TestSpdxE2eReport(t *testing.T) {
 0% have purls.
 0% have CPEs.
 0% have file digest.
-Spec valid? true` {
+Spec valid? true
+Has creation info? false` {
 		t.Log("Incorrect report results generated.\n" +
 			"Got this: \n" + report_text)
 		t.Fail()
@@ -32,7 +34,8 @@ func TestSpdxE2eGrade(t *testing.T) {
 Package ID: 0/20 (0% have purls and 0% have CPEs)
 Package Versions: 0/20
 Package Licenses: 20/20
-Total points: 45/85 or 52%` {
+Creation Info: 0/15 (No tool was used to create the sbom)
+Total points: 45/100 or 45%` {
 		t.Log("Incorrect report results generated.\n" +
 			"Got this: \n" + report_text)
 		t.Fail()

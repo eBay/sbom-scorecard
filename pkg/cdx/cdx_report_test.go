@@ -3,6 +3,7 @@ package cdx
 import (
 	"strings"
 	"testing"
+
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 )
 
@@ -16,6 +17,7 @@ func TestCycloneE2eReport(t *testing.T) {
 100% have package digest.
 100% have purls.
 0% have CPEs.
+Has creation info? true
 Spec valid? true` {
 		t.Log("Incorrect report text generated.\n" +
 			"Got this:\n" + report_text)
@@ -32,7 +34,8 @@ func TestCycloneE2eGrade(t *testing.T) {
 Package ID: 10/20 (100% have purls and 0% have CPEs)
 Package Versions: 20/20
 Package Licenses: 15/20
-Total points: 70/85 or 82%` {
+Creation Info: 15/15
+Total points: 85/100 or 85%` {
 		t.Log("Incorrect report text generated.\n" +
 			"Got this:\n" + report_text)
 		t.Fail()

@@ -1,7 +1,6 @@
 package spdx
 
 import (
-
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -10,20 +9,25 @@ import (
 	spdx_json "github.com/spdx/tools-golang/json"
 	spdx_common "github.com/spdx/tools-golang/spdx/common"
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
-	
-	"github.com/spdx/tools-golang/spdx/v2_2"
+
 	"bytes"
+
+	"regexp"
+
+	"github.com/spdx/tools-golang/spdx/v2_2"
 )
 
+var isNumeric = regexp.MustCompile(`\d`)
+
 var missingPackages = scorecard.ReportValue{
-	Ratio: 0,
+	Ratio:     0,
 	Reasoning: "No packages",
 }
 
 type SpdxReport struct {
-	doc           v2_2.Document
-	docError      error
-	valid         bool
+	doc      *v2_2.Document
+	docError error
+	valid    bool
 
 	totalPackages int
 	totalFiles    int
@@ -44,17 +48,19 @@ func (r *SpdxReport) Report() string {
 	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", scorecard.PrettyPercent(r.hasCPE, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have file digest.\n", scorecard.PrettyPercent(r.hasFileDigest, r.totalFiles)))
 	sb.WriteString(fmt.Sprintf("Spec valid? %v\n", r.valid))
+	sb.WriteString(fmt.Sprintf("Has creation info? %v\n", r.CreationInfo().Ratio == 1))
+
 	return sb.String()
 }
 
 func (r *SpdxReport) IsSpecCompliant() scorecard.ReportValue {
 	if r.docError != nil {
 		return scorecard.ReportValue{
-			Ratio: 0,
+			Ratio:     0,
 			Reasoning: r.docError.Error(),
 		}
 	}
-	return scorecard.ReportValue{Ratio:1}
+	return scorecard.ReportValue{Ratio: 1}
 }
 
 func (r *SpdxReport) PackageIdentification() scorecard.ReportValue {
@@ -65,7 +71,7 @@ func (r *SpdxReport) PackageIdentification() scorecard.ReportValue {
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
 	return scorecard.ReportValue{
 		// What percentage has both Purl & CPEs?
-		Ratio: float32(r.hasPurl + r.hasCPE) / float32(r.totalPackages * 2),
+		Ratio:     float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2),
 		Reasoning: fmt.Sprintf("%d%% have purls and %d%% have CPEs", purlPercent, cpePercent),
 	}
 }
@@ -73,7 +79,7 @@ func (r *SpdxReport) PackageIdentification() scorecard.ReportValue {
 func (r *SpdxReport) PackageVersions() scorecard.ReportValue {
 	if r.totalPackages == 0 {
 		return scorecard.ReportValue{
-			Ratio: 0,
+			Ratio:     0,
 			Reasoning: "No packages",
 		}
 	}
@@ -85,7 +91,7 @@ func (r *SpdxReport) PackageVersions() scorecard.ReportValue {
 func (r *SpdxReport) PackageLicenses() scorecard.ReportValue {
 	if r.totalPackages == 0 {
 		return scorecard.ReportValue{
-			Ratio: 0,
+			Ratio:     0,
 			Reasoning: "No packages",
 		}
 	}
@@ -94,7 +100,45 @@ func (r *SpdxReport) PackageLicenses() scorecard.ReportValue {
 	}
 }
 
+func (r *SpdxReport) CreationInfo() scorecard.ReportValue {
+	foundTool := false
+	hasVersion := false
 
+	if r.doc.CreationInfo == nil {
+		return scorecard.ReportValue{
+			Ratio:     0,
+			Reasoning: "No creation info found",
+		}
+	}
+
+	for _, creator := range r.doc.CreationInfo.Creators {
+		if creator.CreatorType == "Tool" {
+			foundTool = true
+			if isNumeric.MatchString(creator.Creator) {
+				hasVersion = true
+			}
+		}
+	}
+
+	if !foundTool {
+		return scorecard.ReportValue{
+			Ratio:     0,
+			Reasoning: "No tool was used to create the sbom",
+		}
+	}
+
+	if !hasVersion {
+		return scorecard.ReportValue{
+			Ratio:     .2,
+			Reasoning: "The tool used to create the sbom does not have a version",
+		}
+	}
+
+	return scorecard.ReportValue{
+		Ratio: 1,
+	}
+
+}
 
 func GetSpdxReport(filename string) scorecard.SbomReport {
 	f, err := os.Open(filename)
@@ -108,6 +152,8 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 
 	// try to load the SPDX file's contents as a json file, version 2.2
 	spdxDoc, err := spdx_json.Load2_2(bytes.NewReader(byteValue))
+	sr.doc = spdxDoc
+	sr.docError = err
 	sr.valid = err == nil
 	if spdxDoc != nil {
 		if len(spdxDoc.Packages) > 0 {
