@@ -2,9 +2,12 @@ package cmd
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 
 	"errors"
+
+	"strings"
 
 	"github.com/spf13/cobra"
 	"opensource.ebay.com/sbom-scorecard/pkg/cdx"
@@ -25,9 +28,21 @@ type options struct {
 }
 
 func init() {
-	scoreCmd.PersistentFlags().StringVar(&flags.sbomType, "sbomtype", "spdx", "type of sbom being evaluated")
+	scoreCmd.PersistentFlags().StringVar(&flags.sbomType, "sbomtype", "guess", "type of sbom being evaluated")
 	scoreCmd.PersistentFlags().StringVar(&flags.outputFormat, "outputFormat", "text", "format to output")
 	_ = scoreCmd.MarkPersistentFlagRequired("sbomType")
+}
+
+func determineSbomType(filepath string) string {
+	content, err := ioutil.ReadFile(filepath)
+	if err != nil {
+		panic(fmt.Sprintf("Error! %v", err))
+	}
+
+	if strings.Contains(strings.ToLower(string(content)), "spdx") {
+		return "spdx"
+	}
+	return "cdx"
 }
 
 var scoreCmd = &cobra.Command{
@@ -42,6 +57,12 @@ var scoreCmd = &cobra.Command{
 		}
 
 		var r scorecard.SbomReport
+
+		if opts.sbomType == "guess" {
+			opts.sbomType = determineSbomType(opts.path)
+			print("Guessed: " + opts.sbomType + "\n")
+		}
+
 		switch opts.sbomType {
 		case "spdx":
 			r = spdx.GetSpdxReport(opts.path)
@@ -62,7 +83,9 @@ var scoreCmd = &cobra.Command{
 func validateFlags(args []string) (options, error) {
 	var opts options
 	opts.sbomType = flags.sbomType
-	if flags.sbomType != "spdx" && flags.sbomType != "cdx" {
+	if flags.sbomType != "spdx" &&
+		flags.sbomType != "cdx" &&
+		flags.sbomType != "guess" {
 		return opts, errors.New(fmt.Sprintf("Unknown sbomType %s", flags.sbomType))
 	}
 
