@@ -3,6 +3,7 @@ package spdx
 import (
 	"strings"
 	"testing"
+
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 )
 
@@ -14,6 +15,7 @@ func TestSpdxE2eReport(t *testing.T) {
 0 total files
 100% have licenses.
 0% have package digest.
+2% have package versions.
 0% have purls.
 0% have CPEs.
 0% have file digest.
