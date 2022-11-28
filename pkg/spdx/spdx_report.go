@@ -32,6 +32,7 @@ type SpdxReport struct {
 	hasPurl       int
 	hasCPE        int
 	hasFileDigest int
+	hasPackVer    int
 }
 
 func (r *SpdxReport) Report() string {
@@ -40,6 +41,7 @@ func (r *SpdxReport) Report() string {
 	sb.WriteString(fmt.Sprintf("%d total files\n", r.totalFiles))
 	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", scorecard.PrettyPercent(r.hasLicense, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", scorecard.PrettyPercent(r.hasPackDigest, r.totalPackages)))
+	sb.WriteString(fmt.Sprintf("%d%% have package versions.\n", scorecard.PrettyPercent(r.hasPackVer, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", scorecard.PrettyPercent(r.hasPurl, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have CPEs.\n", scorecard.PrettyPercent(r.hasCPE, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have file digest.\n", scorecard.PrettyPercent(r.hasFileDigest, r.totalFiles)))
@@ -73,12 +75,12 @@ func (r *SpdxReport) PackageIdentification() scorecard.ReportValue {
 func (r *SpdxReport) PackageVersions() scorecard.ReportValue {
 	if r.totalPackages == 0 {
 		return scorecard.ReportValue{
-			Ratio: 0,
+			Ratio:     0,
 			Reasoning: "No packages",
 		}
 	}
 	return scorecard.ReportValue{
-		// TODO
+		Ratio: float32(r.hasPackVer / r.totalPackages),
 	}
 }
 
@@ -134,6 +136,10 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 						sr.hasCPE += 1
 						break
 					}
+				}
+
+				if p.PackageVersion != "" {
+					sr.hasPackVer += 1
 				}
 			}
 		}
