@@ -104,7 +104,7 @@ func (r *SpdxReport) CreationInfo() scorecard.ReportValue {
 	foundTool := false
 	hasVersion := false
 
-	if r.doc.CreationInfo == nil {
+	if r.doc == nil || r.doc.CreationInfo == nil {
 		return scorecard.ReportValue{
 			Ratio:     0,
 			Reasoning: "No creation info found",
@@ -191,6 +191,5 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 			}
 		}
 	}
-
 	return &sr
 }
