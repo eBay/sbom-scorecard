@@ -64,13 +64,13 @@ func LoadDocument(path string) (Document, error) {
 func getFiles(doc interface{}) []File {
 	files := []File{}
 	switch castDoc := doc.(type) {
-	case *v2_2.Document:
+	case *Document_22:
 		for _, of := range castDoc.Files {
 			f := File{}
 			f.Checksums = of.Checksums
 			files = append(files, f)
 		}
-	case *v2_3.Document:
+	case *Document_23:
 		for _, of := range castDoc.Files {
 			f := File{}
 			f.Checksums = of.Checksums
