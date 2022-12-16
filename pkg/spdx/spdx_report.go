@@ -2,19 +2,12 @@ package spdx
 
 import (
 	"fmt"
-	"io/ioutil"
-	"os"
 	"strings"
 
-	spdx_json "github.com/spdx/tools-golang/json"
 	spdx_common "github.com/spdx/tools-golang/spdx/common"
 	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 
-	"bytes"
-
 	"regexp"
-
-	"github.com/spdx/tools-golang/spdx/v2_2"
 )
 
 var isNumeric = regexp.MustCompile(`\d`)
@@ -25,7 +18,7 @@ var missingPackages = scorecard.ReportValue{
 }
 
 type SpdxReport struct {
-	doc      *v2_2.Document
+	doc      Document
 	docError error
 	valid    bool
 
@@ -106,14 +99,14 @@ func (r *SpdxReport) CreationInfo() scorecard.ReportValue {
 	foundTool := false
 	hasVersion := false
 
-	if r.doc == nil || r.doc.CreationInfo == nil {
+	if r.doc == nil || r.doc.GetCreationInfo() == nil {
 		return scorecard.ReportValue{
 			Ratio:     0,
 			Reasoning: "No creation info found",
 		}
 	}
 
-	for _, creator := range r.doc.CreationInfo.Creators {
+	for _, creator := range r.doc.GetCreationInfo().Creators {
 		if creator.CreatorType == "Tool" {
 			foundTool = true
 			if isNumeric.MatchString(creator.Creator) {
@@ -143,45 +136,42 @@ func (r *SpdxReport) CreationInfo() scorecard.ReportValue {
 }
 
 func GetSpdxReport(filename string) scorecard.SbomReport {
-	f, err := os.Open(filename)
-	if err != nil {
-		fmt.Printf("Error while opening %v for reading: %v", filename, err)
-		return nil
-	}
-	defer f.Close()
-	byteValue, _ := ioutil.ReadAll(f)
 	sr := SpdxReport{}
+	doc, err := LoadDocument(filename)
+	if err != nil {
+		fmt.Printf("loading document: %v\n", err)
+		return &sr
+	}
 
 	// try to load the SPDX file's contents as a json file, version 2.2
-	spdxDoc, err := spdx_json.Load2_2(bytes.NewReader(byteValue))
-	sr.doc = spdxDoc
+	sr.doc = doc
 	sr.docError = err
 	sr.valid = err == nil
-	if spdxDoc != nil {
-		if len(spdxDoc.Packages) > 0 {
-			for _, p := range spdxDoc.Packages {
-				sr.totalPackages += 1
-				if p.PackageLicenseConcluded != "NONE" &&
-					p.PackageLicenseConcluded != "NOASSERTION" &&
-					p.PackageLicenseConcluded != "" {
-					sr.hasLicense += 1
-				}
+	if sr.doc != nil {
+		packages := sr.doc.GetPackages()
 
-				if len(p.PackageChecksums) > 0 {
-					sr.hasPackDigest += 1
-				}
+		for _, p := range packages {
+			sr.totalPackages += 1
+			if p.PackageLicenseConcluded != "NONE" &&
+				p.PackageLicenseConcluded != "NOASSERTION" &&
+				p.PackageLicenseConcluded != "" {
+				sr.hasLicense += 1
+			}
 
-				for _, ref := range p.PackageExternalReferences {
-					if ref.RefType == spdx_common.TypePackageManagerPURL {
-						sr.hasPurl += 1
-					}
-				}
+			if len(p.PackageChecksums) > 0 {
+				sr.hasPackDigest += 1
+			}
 
-				for _, ref := range p.PackageExternalReferences {
-					if strings.HasPrefix(ref.RefType, "cpe") {
-						sr.hasCPE += 1
-						break
-					}
+			for _, ref := range p.PackageExternalReferences {
+				if ref.RefType == spdx_common.TypePackageManagerPURL {
+					sr.hasPurl += 1
+				}
+			}
+
+			for _, ref := range p.PackageExternalReferences {
+				if strings.HasPrefix(ref.RefType, "cpe") {
+					sr.hasCPE += 1
+					break
 				}
 
 				if p.PackageVersion != "" {
@@ -190,7 +180,7 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 			}
 		}
 
-		for _, file := range spdxDoc.Files {
+		for _, file := range sr.doc.GetFiles() {
 			sr.totalFiles += 1
 			if len(file.Checksums) > 0 {
 				sr.hasFileDigest += 1
