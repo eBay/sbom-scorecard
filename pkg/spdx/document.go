@@ -33,24 +33,25 @@ type File struct {
 }
 
 func LoadDocument(path string) (Document, error) {
+	var err1 error
 	f, err := os.Open(path)
 	if err != nil {
 		return nil, fmt.Errorf("opening SPDX document: %w", err)
 	}
 
-	doc23, err := spdx_json.Load2_3(f)
-	if err != nil {
-		return nil, fmt.Errorf(errOpenDoc, "v2.3", err)
-	}
-
-	if doc23 != nil {
+	doc23, err1 := spdx_json.Load2_3(f)
+	if err1 == nil && doc23 != nil {
 		return documentFromSPDX(doc23)
 	}
 
 	// First, try to open SPDX 2.2
 	doc22, err := spdx_json.Load2_2(f)
 	if err != nil {
-		return nil, fmt.Errorf(errOpenDoc, "v2.2", err)
+		err := fmt.Errorf(errOpenDoc, "v2.2", err)
+		if err1 != nil {
+			err = fmt.Errorf("%s + opening 2.3: %w ", err.Error(), err1)
+		}
+		return nil, err
 	}
 
 	if doc22 != nil {
