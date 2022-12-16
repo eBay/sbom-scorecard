@@ -173,10 +173,10 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 					sr.hasCPE += 1
 					break
 				}
+			}
 
-				if p.PackageVersion != "" {
-					sr.hasPackVer += 1
-				}
+			if p.PackageVersion != "" {
+				sr.hasPackVer += 1
 			}
 		}
 
