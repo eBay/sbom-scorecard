@@ -116,7 +116,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 			if p.Licenses != nil && len(*p.Licenses) > 0 {
 				r.hasLicense += 1
 			}
-			if len(*p.Hashes) > 0 {
+			if p.Hashes != nil && len(*p.Hashes) > 0 {
 				r.hasPackDigest += 1
 			}
 			if p.PackageURL != "" {
