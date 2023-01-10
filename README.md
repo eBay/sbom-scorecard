@@ -80,3 +80,7 @@ So that's 86% (including the 15% b/c generation info isn't implemented).
 1. Should we preference towards purls or CPEs? Both?
 2. Should package info really be split?
 3. Should we break "license info" out as it's own top-level criteria?
+
+## Installation and Usage
+
+Refer to [tutorial.md](tutorial.md).
