@@ -1,30 +1,7 @@
-## Installation
+## Installation for Users
 
-Install via [git](https://git-scm.com/):
-
-```bash
-git clone https://github.com/eBay/sbom-scorecard
-```
-
-Navigate to the project directory:
-
-```bash
-cd sbom-scorecard
-```
-
-Assuming the user has Go [Go](https://go.dev/doc/install) installed,
-the user can then install the package in `$GOPATH/bin` by running:
-
-```bash
-go build cmd/sbom-scorecard/main.go
-```
-
-The user can also execute the tool without using `go build` or `go install`
-by using `go run`:
-
-```bash
-go run cmd/sbom-scorecard/main.go
-```
+A user can download the platform-appropriate binary from
+the project's [releases page](https://github.com/eBay/sbom-scorecard/releases).
 
 ## Usage:
 
@@ -65,4 +42,32 @@ To run `sbom-scorecard` and specify the output format as JSON, run:
 
 ```bash
 go run cmd/sbom-scorecard/main.go score --outputFormat json examples/dropwizard.cyclonedx.json
+```
+
+# Instructions for Downloading and Building Source Code
+
+Install via git:
+
+```bash
+git clone https://github.com/eBay/sbom-scorecard
+```
+
+Navigate to the project directory:
+
+```bash
+cd sbom-scorecard
+```
+
+Assuming the user has Go [Go](https://go.dev/doc/install) installed,
+the user can then install the package in `$GOPATH/bin` by running:
+
+```bash
+go build cmd/sbom-scorecard/main.go
+```
+
+The user can also execute the tool without using `go build` or `go install`
+by using `go run`:
+
+```bash
+go run cmd/sbom-scorecard/main.go
 ```
