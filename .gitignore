@@ -1,3 +1,4 @@
 /sbom-scorecard
 /bin
 coverage.txt
+slsa/goreleaser*

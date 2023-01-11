@@ -28,3 +28,24 @@ examples/julia.spdx.json:
 
 examples/dropwizard.cyclonedx.json:
 	curl -Lo examples/dropwizard.cyclonedx.json https://github.com/CycloneDX/bom-examples/raw/master/SBOM/dropwizard-1.3.15/bom.json
+
+
+slsa: slsa/goreleaser-linux-amd64.yml slsa/goreleaser-linux-arm64.yml slsa/goreleaser-darwin-amd64.yml slsa/goreleaser-darwin-arm64.yml slsa/goreleaser-windows-amd64.yml slsa/goreleaser-windows-arm64.yml
+
+slsa/goreleaser-linux-amd64.yml:
+	GOOS=linux GOARCH=amd64 make TEMPLATE
+slsa/goreleaser-linux-arm64.yml:
+	GOOS=linux GOARCH=arm64 make TEMPLATE
+
+slsa/goreleaser-darwin-amd64.yml:
+	GOOS=darwin GOARCH=amd64 make TEMPLATE
+slsa/goreleaser-darwin-arm64.yml:
+	GOOS=darwin GOARCH=arm64 make TEMPLATE
+
+slsa/goreleaser-windows-amd64.yml:
+	GOOS=windows GOARCH=amd64 make TEMPLATE
+slsa/goreleaser-windows-arm64.yml:
+	GOOS=windows GOARCH=arm64 make TEMPLATE
+
+TEMPLATE:
+	cat slsa/template.yml | sed -e s/OS_HERE/${GOOS}/g | sed -e s/ARCH_HERE/${GOARCH}/g > slsa/goreleaser-${GOOS}-${GOARCH}.yml
