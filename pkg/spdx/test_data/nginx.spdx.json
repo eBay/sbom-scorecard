@@ -1,0 +1,2050 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2022-12-16T00:23:35Z",
+    "creators": [
+      "Tool: apko (canary)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5"
+  ],
+  "files": [
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/fastcgi.conf",
+      "fileName": "/etc/nginx/fastcgi.conf",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "861e4791d437e9d3dbf616ecd384b53114c1e6897e13a73717eaa7fab18006ed06b554323c1ec701de08b724d492be6361fbc99a8fdc73516fb89558759b1aaa"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/fastcgi.conf.default",
+      "fileName": "/etc/nginx/fastcgi.conf.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cbf596ddb3433a8e0d325f3c188bec9c1bb746b3"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b2c3d480a58f61f3a7dc61850b461e892e36f236317765a4f2f6d558c928fa57"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "861e4791d437e9d3dbf616ecd384b53114c1e6897e13a73717eaa7fab18006ed06b554323c1ec701de08b724d492be6361fbc99a8fdc73516fb89558759b1aaa"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/fastcgi_params",
+      "fileName": "/etc/nginx/fastcgi_params",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "da38e2a0dded838afbe0eade6cb837ac30fd8046"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "024a3242021d45ecd868db085cf1696367acc28c6ba0b2100743f448510cd5cdb4554d8b0c680183122364530fa1c27596c16910838cce251828e9ee99730924"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/fastcgi_params.default",
+      "fileName": "/etc/nginx/fastcgi_params.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "da38e2a0dded838afbe0eade6cb837ac30fd8046"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "024a3242021d45ecd868db085cf1696367acc28c6ba0b2100743f448510cd5cdb4554d8b0c680183122364530fa1c27596c16910838cce251828e9ee99730924"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/koi-utf",
+      "fileName": "/etc/nginx/koi-utf",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "407cb51b397ba4ad90a2246640a81af18e2e917a"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b5f8a6d411db5e5d11d151d50cd1e962444732593adec0e1ef0a8c6eebec63ee"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "98737caee7f6163370a81fab4a2a693e959e370cbe7df79c59c416337f82df35a5e0c8309d3274db6b73955ff93359df0a5825946ed1012976b36dd7fb12a6d9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/koi-win",
+      "fileName": "/etc/nginx/koi-win",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "19ec7fb71e7f00d7e8a1cfc1013490f0cfee572b"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "de518a9eafe86c8bc705e296d0ef26135835b46bdc0de01d1d50a630fa5d341e"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "f03ed0db2ca73ae997001c29543a8ce791c56de0ce7acad644fb876c8b0d161f796fbd3e5900d0eb24865bf7420de6fc7149411c82b5b9227115fb61a9b1d120"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/mime.types",
+      "fileName": "/etc/nginx/mime.types",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9b85e5091018455091d7f135c4a160ad9487516a"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "4745534ec02649bc67b60f451bc46bb26880abc448e8840229a7dad982d516619d675607c8e112aeb7080e6e4f8ef046bce6037ffb8539373ff8002a9b166392"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/mime.types.default",
+      "fileName": "/etc/nginx/mime.types.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9b85e5091018455091d7f135c4a160ad9487516a"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6f95d1d7d75e3c072907d845622a69d23110d1266c16ff122b3109b8b21f3ae9"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "4745534ec02649bc67b60f451bc46bb26880abc448e8840229a7dad982d516619d675607c8e112aeb7080e6e4f8ef046bce6037ffb8539373ff8002a9b166392"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/nginx.conf",
+      "fileName": "/etc/nginx/nginx.conf",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "ba33d237b1f11b8418346d6abc6f135368062f10"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4732f49ffb20c18abb176b06085d74869fee2f4ef58a0a209eb353ac8506190b"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "ccad3ff8378c3d63c30b370c07d3ec4f0f644cb068471e4a2d2b05acd81b7f87e4925e7d82379332bf18f2b0c4eca9be9691d157faa4c8951be0e7a780d761fb"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/nginx.conf.default",
+      "fileName": "/etc/nginx/nginx.conf.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d548a69f9775dd7bfe752b7ed9a43b6a2413eda9"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "95363d79620c1b3eb6951711b6630a411f147bc9197bc91442c0605cf6688e46"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "86f2706951bf89c896c1b10d5e1de8a53d9343576db3656722124d089d2934116a53ecebe51a1caf3affefcda99ec358e04e805d8baf1e3649f86953092c5abc"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/scgi_params",
+      "fileName": "/etc/nginx/scgi_params",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "0a3c59294353f5fcf0b799438e6fa2d41e1eacd11e714e119cc36366c294dd9b76fdfa1959f6bdb2480380034a8caaff8562a1509c4feceab6fae04cc89f71f5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/scgi_params.default",
+      "fileName": "/etc/nginx/scgi_params.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "379c1e2a2a5ffb8c91a07328d4c9be2bc58799fd"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f27b2027c571ccafcfb0fbb3f54d7aeee11a984e3a0f5a1fdf14629030fc9011"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "0a3c59294353f5fcf0b799438e6fa2d41e1eacd11e714e119cc36366c294dd9b76fdfa1959f6bdb2480380034a8caaff8562a1509c4feceab6fae04cc89f71f5"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/uwsgi_params",
+      "fileName": "/etc/nginx/uwsgi_params",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "c67d43979b94622874dff09038d19938bb38aa279edf729d2dfb1c7e0591c688c1908a14dd4747cd894b0f9a10f487b57fb01cd3ae6ec154ad621c2db3a84f0b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/uwsgi_params.default",
+      "fileName": "/etc/nginx/uwsgi_params.default",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "cc2fcdb4605dcac23d59f667889ccbdfdc6e3668"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "015cb581c2eb84b1a1ac9b575521d5881f791f632bfa62f34b26ba97d70c0d4f"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "c67d43979b94622874dff09038d19938bb38aa279edf729d2dfb1c7e0591c688c1908a14dd4747cd894b0f9a10f487b57fb01cd3ae6ec154ad621c2db3a84f0b"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/etc/nginx/win-utf",
+      "fileName": "/etc/nginx/win-utf",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e10f2d42c9e581901d810928d01a3bf8f3372838"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "55adf050bad0cb60cbfe18649f8f17cd405fece0cc65eb78dac72c74c9dad944"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "77dcf001e332c6a326b3a8295167f47c298803f3924c3d04a636818ac00f15032aeee1182561df1ad4652b2a4400ac491113eb95a90a69559f7aa64a5839d7aa"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_geoip_module.so",
+      "fileName": "/usr/lib/nginx/modules/ngx_http_geoip_module.so",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "a7aed4a8cb55b8208501ecd5c2e5e1ccc428b953"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f9002997b359c4ae6fbacc36c62fa315815f4b137f9d5b8119c00c03a4c6685e"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "b42db826f782f81828cda8d0d07fc1e330e931c6372ede3433c6a18bf2a9c2f326ee2e27aa9484efa0d87cf723c2b1bcd36c7335f0b7a5baa7271e381aeb425a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_image_filter_module.so",
+      "fileName": "/usr/lib/nginx/modules/ngx_http_image_filter_module.so",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "a82059d64806956f27a791ce70eca36d4d966175"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "79fc44da880537d4b08310c177e32e224a02835e869021c57d6bf8d4e6cc732b"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "24be7ba1e3485857debe8d2df8dc1394acded3ec8a04003e41e15b418b1b1355cb4e97b2c8749ebe63a844bb6db6f377d2604cd588147deaec4281075fc5819a"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_xslt_filter_module.so",
+      "fileName": "/usr/lib/nginx/modules/ngx_http_xslt_filter_module.so",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "0e61062d974185686ab2bee20d7457f365b9c90a"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "78c676413170eb0b8e36824ed0972f37d06b5244c85ba91af6b67616e16a9200"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "a373140bb34f94373c6ac2d2014fad50d2b0b9ae009fbcdd45911e5b10e4a3e86dd36e577be047a68bd8d2b75b790bfae3e6f6d5000dc0f86eaf02aeb1358735"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_geoip_module.so",
+      "fileName": "/usr/lib/nginx/modules/ngx_stream_geoip_module.so",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "8e409a0b66841783c9c0cfe2ec911b701eb53ba5"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f777f5dd722d22e4c78bfefe9b0e790660e201139e3f5492213045df2f1e442a"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "15a6df324d963993761900b2da3e8bfd93e920fa112137da82023b32ad20ca30c927471d736e6dc12c64be24da06a5b6da4f7b47363f6cf0423ed67c896d9cb9"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_module.so",
+      "fileName": "/usr/lib/nginx/modules/ngx_stream_module.so",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "5fc98894c336406b5997ffb8524abec91f1ad02c"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "17afeed96048e9cfb439deb32ced7dc03025e55fe44e04e8903459f6d8c59641"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "4cac931ef979a7cfe83d7e7bdf9867159eb96918e2a333b7670aea6d2f929d39ca5ea18d664bea170da8df03f319d29246bbb718a139a9e94dd6935455a2db6d"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/usr/sbin/nginx",
+      "fileName": "/usr/sbin/nginx",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "4fed00a8ce922f2d9a8ae925a54543c4b761fb62"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "71a46bb3a0ac723dc2e21232b1f51fa16ce93a46a8c729093cc45eb41b080790"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "fb9291acc8a48d922c5a8b7340e8407773a29c77fff3d90234d53cefd41082580015829f0c50fdc584f9e454139425053ae6a785f6b20d1183ed018295be5017"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/var/lib/nginx/html/50x.html",
+      "fileName": "/var/lib/nginx/html/50x.html",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "835b9dec419c01420e78602527a9fba8c463521c"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "876766b4e80133fd490603e073d3567425b88794828a9292104244c9e40875ed"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "81a2bb82a89a8e698a267fd925367ffa4bb4ee02e482d670835ae8621751605ce856fab051c9770e8e3cb94f63fb6dd03284affe4e1161f57c1bf9178b3da472"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-File-/var/lib/nginx/html/index.html",
+      "fileName": "/var/lib/nginx/html/index.html",
+      "licenseConcluded": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c51a3f0e6de4eb802d5630941c3fd9e1d0efae4b"
+        },
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fb47468a2cd3953c7131431991afcc6a2703f14640520102eea0a685a7e8d6de"
+        },
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "098db3badb76a319c211d685b869e15bbc51e2658a912514b253d2a5ef3a61981dad1726f1ccb494f21b7869e655b88446c5c5c91fd76d4e33885a0b5aef3bad"
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5",
+      "name": "sha256:831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5",
+      "filesAnalyzed": false,
+      "description": "apko container image",
+      "downloadLocation": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/nginx@sha256:831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-https-C47C47github.comC47chainguard-imagesC47imagesC641023c5842fc825cebf9e53dead7aeb06caf3bd6b",
+      "name": "github.com/chainguard-images/images",
+      "versionInfo": "1023c5842fc825cebf9e53dead7aeb06caf3bd6b",
+      "filesAnalyzed": false,
+      "description": "Image configuration source",
+      "downloadLocation": "https://github.com/chainguard-images/images@1023c5842fc825cebf9e53dead7aeb06caf3bd6b",
+      "primaryPackagePurpose": "SOURCE",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "1023c5842fc825cebf9e53dead7aeb06caf3bd6b"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:github/chainguard-images/images@1023c5842fc825cebf9e53dead7aeb06caf3bd6b",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "name": "sha256:3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "versionInfo": "Unknown",
+      "filesAnalyzed": false,
+      "description": "apko operating system layer",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/nginx@sha256:3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-baselayout-data-3.4.0-r0",
+      "name": "alpine-baselayout-data",
+      "versionInfo": "3.4.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Alpine base dir structure and init scripts",
+      "downloadLocation": "https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e5f7e3293dbc941ee24978f3a48fde0dd6110b03"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/alpine-baselayout-data@3.4.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-keys-2.4-r1",
+      "name": "alpine-keys",
+      "versionInfo": "2.4-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Public keys for Alpine Linux packages",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "903176b2d2a8ddefd1ba6940f19ad17c2c1d4aff"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/alpine-keys@2.4-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-release-3.17.0-r0",
+      "name": "alpine-release",
+      "versionInfo": "3.17.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Alpine release data",
+      "downloadLocation": "https://alpinelinux.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "f548db84f6e00ecc67f9b5f1434e5d16ef73c6f0"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/alpine-release@3.17.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-musl-1.2.3-r4",
+      "name": "musl",
+      "versionInfo": "1.2.3-r4",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "the musl c library (libc) implementation",
+      "downloadLocation": "https://musl.libc.org/",
+      "originator": "Person: Timo Teräs \u003ctimo.teras@iki.fi\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "3e4ef1d70a00adb0759f390c3c93ead53102c2eb"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/musl@1.2.3-r4?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-geoip-1.6.12-r3",
+      "name": "geoip",
+      "versionInfo": "1.6.12-r3",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL",
+      "description": "Lookup countries by IP addresses",
+      "downloadLocation": "http://www.maxmind.com/app/ip-location",
+      "originator": "Person: Leonardo Arena \u003crnalrd@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d8096140835e870473613b6f9cff90f77febf055"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/geoip@1.6.12-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libcrypto3-3.0.7-r1",
+      "name": "libcrypto3",
+      "versionInfo": "3.0.7-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "description": "Crypto library from openssl",
+      "downloadLocation": "https://www.openssl.org/",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9ed4c869a15719ce1cc301c2d7c24dd7a74415f6"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libcrypto3@3.0.7-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgpg-error-1.46-r1",
+      "name": "libgpg-error",
+      "versionInfo": "1.46-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later LGPL-2.1-or-later",
+      "description": "Support library for libgcrypt",
+      "downloadLocation": "https://www.gnupg.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "3f0ce5a2ba5f06244fea75fda31fd9416cea9871"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libgpg-error@1.46-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgcrypt-1.10.1-r0",
+      "name": "libgcrypt",
+      "versionInfo": "1.10.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LGPL-2.1-or-later",
+      "description": "General purpose crypto library based on the code used in GnuPG",
+      "downloadLocation": "https://www.gnupg.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "0d5d17fe32c13c43f2d7e33359b9ae09d41b1449"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libgcrypt@1.10.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-xz-libs-5.4.0-r0",
+      "name": "xz-libs",
+      "versionInfo": "5.4.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later AND Public-Domain AND LGPL-2.1-or-later",
+      "description": "Library and CLI tools for XZ and LZMA compressed files (libraries)",
+      "downloadLocation": "https://tukaani.org/xz",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9d3aac4a93a79e7edd963a15436284c32c11c61f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/xz-libs@5.4.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-zlib-1.2.13-r0",
+      "name": "zlib",
+      "versionInfo": "1.2.13-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Zlib",
+      "description": "A compression/decompression Library",
+      "downloadLocation": "https://zlib.net/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9cf99613a1f6fbc5f75fcc74406a890446400006"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/zlib@1.2.13-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxml2-2.10.3-r2",
+      "name": "libxml2",
+      "versionInfo": "2.10.3-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "XML parsing library, version 2",
+      "downloadLocation": "http://www.xmlsoft.org/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "5e1cd533bcaec81e44540c11172109e00464969a"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxml2@2.10.3-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxslt-1.1.37-r0",
+      "name": "libxslt",
+      "versionInfo": "1.1.37-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "custom",
+      "description": "XML stylesheet transformation library",
+      "downloadLocation": "http://xmlsoft.org/XSLT/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "f8473f87d4183160ff439ff07361f5d045cfc862"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxslt@1.1.37-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxau-1.0.11-r0",
+      "name": "libxau",
+      "versionInfo": "1.0.11-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "X11 authorisation library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "86a06d88aca9ff282ed2f8317ec561a7d64ac971"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxau@1.0.11-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libmd-1.0.4-r0",
+      "name": "libmd",
+      "versionInfo": "1.0.4-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Public Domain",
+      "description": "Message Digest functions from BSD systems",
+      "downloadLocation": "https://www.hadrons.org/software/libmd/",
+      "originator": "Person: omni \u003comni+alpine@hack.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "3f17a9a3c36cde73c6a3288b6dbc4003034f71ab"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libmd@1.0.4-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libbsd-0.11.7-r0",
+      "name": "libbsd",
+      "versionInfo": "0.11.7-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "description": "commonly-used BSD functions not implemented by all libcs",
+      "downloadLocation": "https://libbsd.freedesktop.org/",
+      "originator": "Person: Drew DeVault \u003csir@cmpwn.com\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "87cf7311fc0fc084677a120c8ce301afa62a2fc7"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libbsd@0.11.7-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxdmcp-1.1.4-r0",
+      "name": "libxdmcp",
+      "versionInfo": "1.1.4-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "X11 Display Manager Control Protocol library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "7dffe26408af9e572286072ad421e71bb1dec9f4"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxdmcp@1.1.4-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxcb-1.15-r0",
+      "name": "libxcb",
+      "versionInfo": "1.15-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "X11 client-side library",
+      "downloadLocation": "https://xcb.freedesktop.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "57322d0d27a089374f5db084566db098f2a3b5e5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxcb@1.15-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libx11-1.8.3-r0",
+      "name": "libx11",
+      "versionInfo": "1.8.3-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "custom:XFREE86",
+      "description": "X11 client-side library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "43f2e532503a1e79b5f27cf57afaa618e01e63ff"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libx11@1.8.3-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxext-1.3.5-r0",
+      "name": "libxext",
+      "versionInfo": "1.3.5-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "X11 miscellaneous extensions library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "88f83c15a3b755547127ef4e2aa7a4dbf56f952d"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxext@1.3.5-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libice-1.1.1-r0",
+      "name": "libice",
+      "versionInfo": "1.1.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "X11",
+      "description": "X11 Inter-Client Exchange library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "900489db7dbf73d1ea92f83d9ee2ded2787189e7"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libice@1.1.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libuuid-2.38.1-r1",
+      "name": "libuuid",
+      "versionInfo": "2.38.1-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "description": "DCE compatible Universally Unique Identifier library",
+      "downloadLocation": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "356680527e1811662e0c899be371e2352190f416"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libuuid@2.38.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libsm-1.2.3-r2",
+      "name": "libsm",
+      "versionInfo": "1.2.3-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "X11 Session Management library",
+      "downloadLocation": "https://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "800cdc785ef991e311f699b74dd655736ec25736"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libsm@1.2.3-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxt-1.2.1-r1",
+      "name": "libxt",
+      "versionInfo": "1.2.1-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "custom",
+      "description": "X11 toolkit intrinsics library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e1527dd27e4a2c30278caf8fa8d4cdae4c08363e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxt@1.2.1-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxpm-3.5.14-r0",
+      "name": "libxpm",
+      "versionInfo": "3.5.14-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "custom:BELL",
+      "description": "X11 pixmap library",
+      "downloadLocation": "http://xorg.freedesktop.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9568658171ee36a240bfb217e5a6a5b726d6049b"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libxpm@3.5.14-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-aom-libs-3.5.0-r0",
+      "name": "aom-libs",
+      "versionInfo": "3.5.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause AND custom",
+      "description": "Alliance for Open Media (AOM) AV1 codec SDK (libraries)",
+      "downloadLocation": "https://aomedia.org/",
+      "originator": "Person: Oleg Titov \u003coleg.titov@gmail.com\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "7c07f8902e9a4ac310173216677f703cbee8430c"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/aom-libs@3.5.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libdav1d-1.0.0-r2",
+      "name": "libdav1d",
+      "versionInfo": "1.0.0-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "description": "small and fast AV1 Decoder (libraries)",
+      "downloadLocation": "https://code.videolan.org/videolan/dav1d",
+      "originator": "Person: Bart Ribbers \u003cbribbers@disroot.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "f63e4bf26ec1f507f01b1cd6e012a7c8a5751159"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libdav1d@1.0.0-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libavif-0.11.1-r0",
+      "name": "libavif",
+      "versionInfo": "0.11.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "description": "Library for encoding and decoding .avif files",
+      "downloadLocation": "https://aomediacodec.github.io/av1-avif/",
+      "originator": "Person: Bart Ribbers \u003cbribbers@disroot.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d69dfa59358b7fe0ce53c20cda93bfac03c5324e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libavif@0.11.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-busybox-1.35.0-r29",
+      "name": "busybox",
+      "versionInfo": "1.35.0-r29",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "Size optimized toolbox of many common UNIX utilities",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "111f541e2541e00323bb32591b366022e2d3efdd"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/busybox@1.35.0-r29?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-busybox-binsh-1.35.0-r29",
+      "name": "busybox-binsh",
+      "versionInfo": "1.35.0-r29",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "busybox ash /bin/sh",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "9a25b0ca158a5d51224582e1980ad5d5328cb3a0"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/busybox-binsh@1.35.0-r29?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libexpat-2.5.0-r0",
+      "name": "libexpat",
+      "versionInfo": "2.5.0-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "XML Parser library written in C (libraries)",
+      "downloadLocation": "https://libexpat.github.io/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "dfc3df7bfbf0d7f5ac46b637bd9a8da99f7d3493"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libexpat@2.5.0-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-brotli-libs-1.0.9-r10",
+      "name": "brotli-libs",
+      "versionInfo": "1.0.9-r10",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Generic lossless compressor (libraries)",
+      "downloadLocation": "https://github.com/google/brotli",
+      "originator": "Person: prspkt \u003cprspkt@protonmail.com\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e3e006b6f980015c8fd3a6a0563dfae4e2537a4e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/brotli-libs@1.0.9-r10?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libbz2-1.0.8-r4",
+      "name": "libbz2",
+      "versionInfo": "1.0.8-r4",
+      "filesAnalyzed": false,
+      "licenseConcluded": "bzip2-1.0.6",
+      "description": "Shared library for bz2",
+      "downloadLocation": "https://sourceware.org/bzip2/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2c7234fc1f978866032d38cca9863318379ea805"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libbz2@1.0.8-r4?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libpng-1.6.39-r2",
+      "name": "libpng",
+      "versionInfo": "1.6.39-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Libpng",
+      "description": "Portable Network Graphics library",
+      "downloadLocation": "http://www.libpng.org",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "2399c8fba0e2984f53b3efc67cf7a9c644955c2a"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libpng@1.6.39-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-freetype-2.12.1-r0",
+      "name": "freetype",
+      "versionInfo": "2.12.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "FTL GPL-2.0-or-later",
+      "description": "TrueType font rendering library",
+      "downloadLocation": "https://www.freetype.org/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "5ef7742148d327316081743a1b6ffbfc0a5d8c1e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/freetype@2.12.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-fontconfig-2.14.1-r0",
+      "name": "fontconfig",
+      "versionInfo": "2.14.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "description": "Library for configuring and customizing font access",
+      "downloadLocation": "https://www.freedesktop.org/wiki/Software/fontconfig",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "4c625fe5a378635bf8c4c728f810de74bde63ee4"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/fontconfig@2.14.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libjpeg-turbo-2.1.4-r0",
+      "name": "libjpeg-turbo",
+      "versionInfo": "2.1.4-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause AND IJG AND Zlib",
+      "description": "Accelerated baseline JPEG compression and decompression library",
+      "downloadLocation": "https://libjpeg-turbo.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "d22cb3db9672cb284d0edcb6f4f38aa232f221d2"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libjpeg-turbo@2.1.4-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libwebp-1.2.4-r1",
+      "name": "libwebp",
+      "versionInfo": "1.2.4-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "description": "Libraries for working with WebP images",
+      "downloadLocation": "https://developers.google.com/speed/webp",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "be2ea74e186967fbc54f36c4f93ebebc419bb7f8"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libwebp@1.2.4-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-zstd-libs-1.5.2-r9",
+      "name": "zstd-libs",
+      "versionInfo": "1.5.2-r9",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause GPL-2.0-or-later",
+      "description": "Zstandard - Fast real-time compression algorithm (libraries)",
+      "downloadLocation": "https://www.zstd.net/",
+      "originator": "Person: psykose \u003calice@ayaya.dev\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "f5bd9360acaa4f91d88d251fc637fe556c8b071a"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/zstd-libs@1.5.2-r9?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-tiff-4.4.0-r1",
+      "name": "tiff",
+      "versionInfo": "4.4.0-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "libtiff",
+      "description": "Provides support for the Tag Image File Format or TIFF",
+      "downloadLocation": "https://gitlab.com/libtiff/libtiff",
+      "originator": "Person: Michael Mason \u003cms13sp@gmail.com\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "e3c12a2fc66f339000b45125e96bcd7a534edebd"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/tiff@4.4.0-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgd-2.3.3-r3",
+      "name": "libgd",
+      "versionInfo": "2.3.3-r3",
+      "filesAnalyzed": false,
+      "licenseConcluded": "custom",
+      "description": "Library for the dynamic creation of images by programmers (libraries)",
+      "downloadLocation": "https://libgd.github.io/",
+      "originator": "Person: Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c91fbbfdf04f11fb641e7cae6df60c11e65ddf63"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libgd@2.3.3-r3?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-pcre-8.45-r2",
+      "name": "pcre",
+      "versionInfo": "8.45-r2",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "description": "Perl-compatible regular expression library",
+      "downloadLocation": "https://www.pcre.org/",
+      "originator": "Person: Natanael Copa \u003cncopa@alpinelinux.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "831f8193f493baea16a4e5f1b9c62dd00893d74a"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/pcre@8.45-r2?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libssl3-3.0.7-r1",
+      "name": "libssl3",
+      "versionInfo": "3.0.7-r1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "description": "SSL shared libraries",
+      "downloadLocation": "https://www.openssl.org/",
+      "originator": "Person: Ariadne Conill \u003cariadne@dereferenced.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "5b07cbd8def6ef160228d49ced367cae6c6349db"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/libssl3@3.0.7-r1?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-sslC95client-1.35.0-r29",
+      "name": "ssl_client",
+      "versionInfo": "1.35.0-r29",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "description": "EXternal ssl_client for busybox wget",
+      "downloadLocation": "https://busybox.net/",
+      "originator": "Person: Sören Tempel \u003csoeren+alpine@soeren-tempel.net\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "42ea998de3fa5c6f39236f6d3a2096a1f2fc0a3d"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/ssl_client@1.35.0-r29?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-nginx",
+      "name": "nginx",
+      "versionInfo": "1.23.2",
+      "filesAnalyzed": true,
+      "hasFiles": [
+        "SPDXRef-File-/etc/nginx/fastcgi.conf",
+        "SPDXRef-File-/etc/nginx/fastcgi.conf.default",
+        "SPDXRef-File-/etc/nginx/fastcgi_params",
+        "SPDXRef-File-/etc/nginx/fastcgi_params.default",
+        "SPDXRef-File-/etc/nginx/koi-utf",
+        "SPDXRef-File-/etc/nginx/koi-win",
+        "SPDXRef-File-/etc/nginx/mime.types",
+        "SPDXRef-File-/etc/nginx/mime.types.default",
+        "SPDXRef-File-/etc/nginx/nginx.conf",
+        "SPDXRef-File-/etc/nginx/nginx.conf.default",
+        "SPDXRef-File-/etc/nginx/scgi_params",
+        "SPDXRef-File-/etc/nginx/scgi_params.default",
+        "SPDXRef-File-/etc/nginx/uwsgi_params",
+        "SPDXRef-File-/etc/nginx/uwsgi_params.default",
+        "SPDXRef-File-/etc/nginx/win-utf",
+        "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_geoip_module.so",
+        "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_image_filter_module.so",
+        "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_xslt_filter_module.so",
+        "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_geoip_module.so",
+        "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_module.so",
+        "SPDXRef-File-/usr/sbin/nginx",
+        "SPDXRef-File-/var/lib/nginx/html/50x.html",
+        "SPDXRef-File-/var/lib/nginx/html/index.html"
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "BSD-2-Clause",
+      "downloadLocation": "NOASSERTION",
+      "copyrightText": "TODO\n",
+      "packageVerificationCode": {
+        "packageVerificationCodeValue": "1ad70fb2d80db2c760eb55dd292a1abc2e387391"
+      }
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-skalibs-2.12.0.1-r0",
+      "name": "skalibs",
+      "versionInfo": "2.12.0.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "description": "Set of general-purpose C programming libraries for skarnet.org software.",
+      "downloadLocation": "https://skarnet.org/software/skalibs/",
+      "originator": "Person: Laurent Bercot \u003cska-devel@skarnet.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "005f04bc262e8c777d3cfa6425beb74bdd144e86"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/skalibs@2.12.0.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-s6-ipcserver-2.11.1.2-r0",
+      "name": "s6-ipcserver",
+      "versionInfo": "2.11.1.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "description": "skarnet.org's small \u0026 secure supervision software suite.",
+      "downloadLocation": "https://skarnet.org/software/s6/",
+      "originator": "Person: Laurent Bercot \u003cska-devel@skarnet.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "33c7f84058c9cc8310c28988e31ffad451894ed6"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/s6-ipcserver@2.11.1.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-execline-2.9.0.1-r0",
+      "name": "execline",
+      "versionInfo": "2.9.0.1-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "description": "A small scripting language, to be used in place of a shell in non-interactive scripts.",
+      "downloadLocation": "http://skarnet.org/software/execline/",
+      "originator": "Person: Laurent Bercot \u003cska-devel@skarnet.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "13755d5c029bac14a620cac53b64364a738709d3"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/execline@2.9.0.1-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-s6-2.11.1.2-r0",
+      "name": "s6",
+      "versionInfo": "2.11.1.2-r0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "description": "skarnet.org's small \u0026 secure supervision software suite.",
+      "downloadLocation": "https://skarnet.org/software/s6/",
+      "originator": "Person: Laurent Bercot \u003cska-devel@skarnet.org\u003e",
+      "sourceInfo": "Package info from apk database",
+      "checksums": [
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "c40085fa204fe055d722787349fc8a21107a3147"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:apk/unknown/s6@2.11.1.2-r0?arch=x86_64",
+          "referenceType": "purl"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-831dde9ac02357d0f3ad1c5fb8462ed308e10ce03ac2ce4d9e4ab1948917dbb5",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-Package-https-C47C47github.comC47chainguard-imagesC47imagesC641023c5842fc825cebf9e53dead7aeb06caf3bd6b"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-baselayout-data-3.4.0-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-keys-2.4-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-alpine-release-3.17.0-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-musl-1.2.3-r4"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-geoip-1.6.12-r3"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libcrypto3-3.0.7-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgpg-error-1.46-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgcrypt-1.10.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-xz-libs-5.4.0-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-zlib-1.2.13-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxml2-2.10.3-r2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxslt-1.1.37-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxau-1.0.11-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libmd-1.0.4-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libbsd-0.11.7-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxdmcp-1.1.4-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxcb-1.15-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libx11-1.8.3-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxext-1.3.5-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libice-1.1.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libuuid-2.38.1-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libsm-1.2.3-r2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxt-1.2.1-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libxpm-3.5.14-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-aom-libs-3.5.0-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libdav1d-1.0.0-r2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libavif-0.11.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-busybox-1.35.0-r29"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-busybox-binsh-1.35.0-r29"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libexpat-2.5.0-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-brotli-libs-1.0.9-r10"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libbz2-1.0.8-r4"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libpng-1.6.39-r2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-freetype-2.12.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-fontconfig-2.14.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libjpeg-turbo-2.1.4-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libwebp-1.2.4-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-zstd-libs-1.5.2-r9"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-tiff-4.4.0-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libgd-2.3.3-r3"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-pcre-8.45-r2"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-libssl3-3.0.7-r1"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-sslC95client-1.35.0-r29"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-nginx"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/fastcgi.conf"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/fastcgi.conf.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/fastcgi_params"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/fastcgi_params.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/koi-utf"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/koi-win"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/mime.types"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/mime.types.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/nginx.conf"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/nginx.conf.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/scgi_params"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/scgi_params.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/uwsgi_params"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/uwsgi_params.default"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/etc/nginx/win-utf"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_geoip_module.so"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_image_filter_module.so"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/lib/nginx/modules/ngx_http_xslt_filter_module.so"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_geoip_module.so"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/lib/nginx/modules/ngx_stream_module.so"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/usr/sbin/nginx"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/var/lib/nginx/html/50x.html"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nginx",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-File-/var/lib/nginx/html/index.html"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-skalibs-2.12.0.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-s6-ipcserver-2.11.1.2-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-execline-2.9.0.1-r0"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-SPDXRef-Package-sha256-3f9a5258d5be681ec5e92a34dbefe3199614576df965ac3339c1c29dfd199a64-s6-2.11.1.2-r0"
+    }
+  ]
+}
