@@ -1,0 +1,48 @@
+SPDXVersion: SPDX-2.2
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: hello-src
+DocumentNamespace: https://swinslow.net/spdx-examples/example2/hello-src-v3
+Creator: Person: Steve Winslow (steve@swinslow.net)
+Creator: Tool: github.com/spdx/tools-golang/builder
+Creator: Tool: github.com/spdx/tools-golang/idsearcher
+Created: 2021-08-26T01:47:00Z
+
+##### Package: hello-src
+
+PackageName: hello-src
+SPDXID: SPDXRef-Package-hello-src
+PackageDownloadLocation: git+https://github.com/swinslow/spdx-examples.git#example2/content/src
+FilesAnalyzed: true
+PackageVerificationCode: c6cb0949d7cd7439fce8690262a0946374824639
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseInfoFromFiles: GPL-3.0-or-later
+PackageLicenseDeclared: GPL-3.0-or-later
+PackageCopyrightText: NOASSERTION
+
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-hello-src
+
+FileName: /Makefile
+SPDXID: SPDXRef-Makefile
+FileType: SOURCE
+FileChecksum: SHA1: 69a2e85696fff1865c3f0686d6c3824b59915c80
+FileChecksum: SHA256: 5da19033ba058e322e21c90e6d6d859c90b1b544e7840859c12cae5da005e79c
+FileChecksum: MD5: 559424589a4f3f75fd542810473d8bc1
+LicenseConcluded: GPL-3.0-or-later
+LicenseInfoInFile: GPL-3.0-or-later
+FileCopyrightText: NOASSERTION
+
+FileName: /hello.c
+SPDXID: SPDXRef-hello-src
+FileType: SOURCE
+FileChecksum: SHA1: 20862a6d08391d07d09344029533ec644fac6b21
+FileChecksum: SHA256: b4e5ca56d1f9110ca94ed0bf4e6d9ac11c2186eb7cd95159c6fdb50e8db5a823
+FileChecksum: MD5: 935054fe899ca782e11003bbae5e166c
+LicenseConcluded: GPL-3.0-or-later
+LicenseInfoInFile: GPL-3.0-or-later
+FileCopyrightText: Copyright Contributors to the spdx-examples project.
+
+##### Relationships
+
+Relationship: SPDXRef-Makefile BUILD_TOOL_OF SPDXRef-Package-hello-src
+

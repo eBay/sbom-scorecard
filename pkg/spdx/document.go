@@ -3,11 +3,14 @@
 package spdx
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
-	"os"
+	"io/ioutil"
 
 	spdx_json "github.com/spdx/tools-golang/json"
+	spdx_rdf "github.com/spdx/tools-golang/rdfloader"
+	spdx_tv "github.com/spdx/tools-golang/tvloader"
 
 	"github.com/spdx/tools-golang/spdx/common"
 	"github.com/spdx/tools-golang/spdx/v2_2"
@@ -33,28 +36,34 @@ type File struct {
 }
 
 func LoadDocument(path string) (Document, error) {
-	var err1 error
-	f, err := os.Open(path)
+	f, err := ioutil.ReadFile(path)
 	if err != nil {
 		return nil, fmt.Errorf("opening SPDX document: %w", err)
 	}
 
-	doc23, err1 := spdx_json.Load2_3(f)
-	if err1 == nil && doc23 != nil {
+	doc23, err := spdx_json.Load2_3(bytes.NewReader(f))
+	if err == nil && doc23 != nil {
+		return documentFromSPDX(doc23)
+	}
+	doc23, err = spdx_rdf.Load2_3(bytes.NewReader(f))
+	if err == nil && doc23 != nil {
+		return documentFromSPDX(doc23)
+	}
+	doc23, err = spdx_tv.Load2_3(bytes.NewReader(f))
+	if err == nil && doc23 != nil {
 		return documentFromSPDX(doc23)
 	}
 
-	// First, try to open SPDX 2.2
-	doc22, err := spdx_json.Load2_2(f)
-	if err != nil {
-		err := fmt.Errorf(errOpenDoc, "v2.2", err)
-		if err1 != nil {
-			err = fmt.Errorf("%s + opening 2.3: %w ", err.Error(), err1)
-		}
-		return nil, err
+	doc22, err := spdx_json.Load2_2(bytes.NewReader(f))
+	if err == nil && doc22 != nil {
+		return documentFromSPDX(doc22)
 	}
-
-	if doc22 != nil {
+	doc22, err = spdx_rdf.Load2_2(bytes.NewReader(f))
+	if err == nil && doc22 != nil {
+		return documentFromSPDX(doc22)
+	}
+	doc22, err = spdx_tv.Load2_2(bytes.NewReader(f))
+	if err == nil && doc22 != nil {
 		return documentFromSPDX(doc22)
 	}
 

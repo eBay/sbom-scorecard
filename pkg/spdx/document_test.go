@@ -24,3 +24,12 @@ func TestLoadDocument(t *testing.T) {
 	// _, ok = doc.(*Document_22)
 	// require.True(t, ok)
 }
+
+func TestLoadTV22(t *testing.T) {
+	doc, err := LoadDocument("../../examples/spdx-example.tv")
+	require.NoError(t, err)
+	require.NotNil(t, doc)
+	// even though this is actually a 2.2 doc, it does validly parse into a 2.3 doc.
+	_, ok := doc.(*Document_23)
+	require.True(t, ok)
+}
