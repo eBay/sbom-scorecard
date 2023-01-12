@@ -64,5 +64,5 @@ Note: `sbom-scorecard` will guess the type if no type is specified.
 To run `sbom-scorecard` and specify the output format as JSON, run:
 
 ```bash
-sbom-scorecardscore --outputFormat json examples/dropwizard.cyclonedx.json
+sbom-scorecard score --outputFormat json examples/dropwizard.cyclonedx.json
 ```
