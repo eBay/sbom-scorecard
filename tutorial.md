@@ -21,7 +21,7 @@ Assuming the user has Go [Go](https://go.dev/doc/install) installed,
 the user can then install the package in `$GOPATH/bin` by running:
 
 ```bash
-go build cmd/sbom-scorecard/main.go
+go install cmd/sbom-scorecard/main.go
 ```
 
 The rest of the tutorial assumes that, if you've gone this route, `$GOPATH/bin` is on your path.
@@ -64,5 +64,5 @@ Note: `sbom-scorecard` will guess the type if no type is specified.
 To run `sbom-scorecard` and specify the output format as JSON, run:
 
 ```bash
-go run cmd/sbom-scorecard/main.go score --outputFormat json examples/dropwizard.cyclonedx.json
+sbom-scorecardscore --outputFormat json examples/dropwizard.cyclonedx.json
 ```
