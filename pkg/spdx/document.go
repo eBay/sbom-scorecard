@@ -66,8 +66,7 @@ func getFiles(doc interface{}) []File {
 	switch castDoc := doc.(type) {
 	case *Document_22:
 		for _, of := range castDoc.Files {
-			f := File{}
-			f.Checksums = of.Checksums
+			f := File{Checksums: of.Checksums}
 			files = append(files, f)
 		}
 	case *Document_23:
