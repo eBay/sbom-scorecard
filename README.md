@@ -6,6 +6,30 @@ When generating first-party SBOMs, it's hard to know if you're generating someth
 
 SPDX, CycloneDX and Syft are all in scope for this repo.
 
+## Installation and Usage
+
+1. Download the pre-compiled, platform-appropriate binary from
+the project's [releases page](https://github.com/eBay/sbom-scorecard/releases) and save it as `sbom-scorecard`.
+2. Install it via go: `go install github.com/ebay/sbom-scorecard/cmd/sbom-scorecard@latest`
+3. Run it from source: `git clone https://github.com/eBay/sbom-scorecard; alias sbom-scorecard="go run $PWD/cmd/sbom-scorecard/main.go"`
+
+From there, you can score an SBOM with:
+```
+sbom-scorecard score examples/julia.spdx.json
+```
+
+We do our best to guess the right format, but you can specify it with:
+```
+sbom-scorecard score --sbomtype spdx examples/julia.spdx.json
+```
+
+
+For other options, run the help subcommand.
+
+```
+sbom-scorecard help
+```
+
 
 ## Scoring.
 
@@ -81,6 +105,3 @@ So that's 86% (including the 15% b/c generation info isn't implemented).
 2. Should package info really be split?
 3. Should we break "license info" out as it's own top-level criteria?
 
-## Installation and Usage
-
-Refer to [tutorial.md](tutorial.md).
