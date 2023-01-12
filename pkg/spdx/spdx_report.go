@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/ebay/sbom-scorecard/pkg/scorecard"
 	spdx_common "github.com/spdx/tools-golang/spdx/common"
-	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
 
 	"regexp"
 )

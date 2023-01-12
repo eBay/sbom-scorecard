@@ -1,4 +1,4 @@
-module opensource.ebay.com/sbom-scorecard
+module github.com/ebay/sbom-scorecard
 
 go 1.19
 

@@ -9,10 +9,10 @@ import (
 
 	"strings"
 
+	"github.com/ebay/sbom-scorecard/pkg/cdx"
+	"github.com/ebay/sbom-scorecard/pkg/scorecard"
+	"github.com/ebay/sbom-scorecard/pkg/spdx"
 	"github.com/spf13/cobra"
-	"opensource.ebay.com/sbom-scorecard/pkg/cdx"
-	"opensource.ebay.com/sbom-scorecard/pkg/scorecard"
-	"opensource.ebay.com/sbom-scorecard/pkg/spdx"
 )
 
 var flags = struct {
