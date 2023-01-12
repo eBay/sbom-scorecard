@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom serialNumber="urn:uuid:9084d642-19ad-47ef-b0e6-df3314d0f9c3" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+  <metadata>
+    <timestamp>2022-10-14T13:22:20Z</timestamp>
+    <tools>
+      <tool>
+        <vendor>OWASP Foundation</vendor>
+        <name>CycloneDX Maven plugin</name>
+        <version>2.7.2</version>
+        <hashes>
+          <hash alg="MD5">f4f0e5aa6c0d5f709b304511547647a6</hash>
+          <hash alg="SHA-1">13a77f9af6a286c9bfc8c00e5d75ff6e9920d4ce</hash>
+          <hash alg="SHA-256">d565f805cfd5e57af6a345e537e78b42ffd56fad094c74443e2a197a4e097538</hash>
+          <hash alg="SHA-512">92ff49fbb954b0341c38daddb30965fd9e8bb909e7e8a66dc65da5d6a958d021c6fe611c0b12314ae02f849de95101efe5b93470050dfb8090a459481ffa736a</hash>
+          <hash alg="SHA-384">e15a47303e035e6612c37f08ebc105674f84cafd779ab52398ce263e67ce93d9d5e4c7c2ddda2f73584b6071a9f1a9da</hash>
+        </hashes>
+      </tool>
+    </tools>
+    <component type="library" bom-ref="pkg:maven/dev.openfeature/sdk@0.3.1-SNAPSHOT?type=jar">
+      <group>dev.openfeature</group>
+      <name>sdk</name>
+      <version>0.3.1-SNAPSHOT</version>
+      <description>This is the Java implementation of OpenFeature, a vendor-agnostic abstraction library for evaluating feature flags.</description>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/dev.openfeature/sdk@0.3.1-SNAPSHOT?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://github.com/open-feature/java-sdk</url></reference></externalReferences>
+    </component>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="pkg:maven/org.projectlombok/lombok@1.18.24?type=jar">
+      <group>org.projectlombok</group>
+      <name>lombok</name>
+      <version>1.18.24</version>
+      <description>Spice up your java: Automatic Resource Management, automatic generation of getters, setters, equals, hashCode and toString, and more!</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">a1651eaa9c999c61131d32feab16fcde</hash>
+        <hash alg="SHA-1">13a394eed5c4f9efb2a6d956e2086f1d81e857d9</hash>
+        <hash alg="SHA-256">d3584bc2db03f059f984fb0a9c119aac1fa0da578a448e69fc3f68b36584c749</hash>
+        <hash alg="SHA-512">8cc3aadb065b747bfe1b0741bb83ecdffe710692f31bd59e95907ff755d424c7586d3e532e7c5660509f610799f74d65956bdb5eba98a8871a449dd3d4cba061</hash>
+        <hash alg="SHA-384">4201d85661dfdcd98e2094f093e9ffee1b6e4d0aa89062dcff01d7880c6933ae190e1d8a452502c206e912bb8880f119</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.projectlombok/lombok@1.18.24?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://github.com/projectlombok/lombok/issues</url></reference><reference type="vcs"><url>http://github.com/projectlombok/lombok</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.spotbugs/spotbugs@4.7.2?type=jar">
+      <group>com.github.spotbugs</group>
+      <name>spotbugs</name>
+      <version>4.7.2</version>
+      <description>SpotBugs: Because it's easy!</description>
+      <scope>optional</scope>
+      <hashes>
+        <hash alg="MD5">b0f9b609636c8cd55f1da51f2d637c19</hash>
+        <hash alg="SHA-1">f4f76809e3a2bd998f6d9aa74fed05d0a7402ceb</hash>
+        <hash alg="SHA-256">df5205f4d87ed53ff5b847c6aedc55d605966c0f8f9820d9c6be5ba517b09bcd</hash>
+        <hash alg="SHA-512">8e0fb2091a546b4d40110903ac059c0b0bda81be500e60bc78dfb4751248e978dcda0f60407b6e040fe173113769f763e44c3052c165e24289f157fd6ee63fce</hash>
+        <hash alg="SHA-384">b01d1dc155a38afe59983c3ca3f78b0815cd2e6f9a6627b31b4b8da7f0ca5de7e7b163cb58d542a05d7aa26f99e6fc45</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>LGPL-2.1-only</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.spotbugs/spotbugs@4.7.2?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://github.com/spotbugs/spotbugs/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm</name>
+      <version>9.3</version>
+      <description>ASM, a very small and fast Java bytecode manipulation framework</description>
+      <hashes>
+        <hash alg="MD5">e1c3b96035117ab516ffe0de9bd696e0</hash>
+        <hash alg="SHA-1">8e6300ef51c1d801a7ed62d07cd221aca3a90640</hash>
+        <hash alg="SHA-256">1263369b59e29c943918de11d6d6152e2ec6085ce63e5710516f8c67d368e4bc</hash>
+        <hash alg="SHA-512">04362f50a2b66934c2635196bf8e6bd2adbe4435f312d1d97f4733c911e070f5693941a70f586928437043d01d58994325e63744e71886ae53a62c824927a4d4</hash>
+        <hash alg="SHA-384">304aa6673d587a68a06dd8601c6db0dc4d387f89a058b7600459522d94780e9e8d87a2778604fc41b81c43a57bf49ad6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm@9.3?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.ow2.org/</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-analysis</name>
+      <version>9.3</version>
+      <description>Static code analysis API of ASM, a very small and fast Java bytecode manipulation framework</description>
+      <hashes>
+        <hash alg="MD5">11e43c0220b3f6b4791b8abf7b4cc7ef</hash>
+        <hash alg="SHA-1">4b071f211b37c38e0e9f5998550197c8593f6ad8</hash>
+        <hash alg="SHA-256">37fd5392bb2cf4c15f202ffefd46d0e92bb34ff848c549f30d426a60d6b29495</hash>
+        <hash alg="SHA-512">0bb033b176c8893bfceba098381f5fef429096d5fe9c6b3eb6fdaac63d88dd059d44f3f296851573fe461888288ca2fa61dadae30530fa08fb3d6214c27915fe</hash>
+        <hash alg="SHA-384">dc2de1e9a75eac66c2ea9b02e7b80f3ec34d20c59bb8ab963a32bc759103f9f67395e0e258fda8f8ad4d5477d8a1c4c5</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.ow2.org/</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-commons@9.3?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-commons</name>
+      <version>9.3</version>
+      <description>Usefull class adapters based on ASM, a very small and fast Java bytecode manipulation framework</description>
+      <hashes>
+        <hash alg="MD5">16e6ac17d33ad97baa415c42e9d93d38</hash>
+        <hash alg="SHA-1">1f2a432d1212f5c352ae607d7b61dcae20c20af5</hash>
+        <hash alg="SHA-256">a347c24732db2aead106b6e5996a015b06a3ef86e790a4f75b61761f0d2f7f39</hash>
+        <hash alg="SHA-512">0bd9c61553808b8a12822f009ea5622918033a9fa8cb6e3ef319bbff08dda00cf439b5653f25d8f3362f02166530a0eabe2664f1169bcd63e2ed93a603c13874</hash>
+        <hash alg="SHA-384">3efa92bf8e3fd41bb72728979e5e1fba057bd45da2b860c4566a2295d0885a2645413d0e0a35e832ea767aba040935fc</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-commons@9.3?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.ow2.org/</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-tree</name>
+      <version>9.3</version>
+      <description>Tree API of ASM, a very small and fast Java bytecode manipulation framework</description>
+      <hashes>
+        <hash alg="MD5">f087bfb911ff93957e44860de3e73c46</hash>
+        <hash alg="SHA-1">78d2ecd61318b5a58cd04fb237636c0e86b77d97</hash>
+        <hash alg="SHA-256">ae629c2609f39681ef8d140a42a23800464a94f2d23e36d8f25cd10d5e4caff4</hash>
+        <hash alg="SHA-512">666318e09f4ae02652a64ce2ddd4dd51275a1917108061155aa8d1d9956e9d54bc259d0586ed7cd745c6ac00ab54fbfdd577f6ce915a158fc2eef373d65d445c</hash>
+        <hash alg="SHA-384">8cb10354310a0a47ecf49388ea4fa1410988e5ec6bacba661496791c947cfc97d6b5765c64703c05f54b1cb79281d5fa</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.ow2.org/</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.ow2.asm/asm-util@9.3?type=jar">
+      <publisher>OW2</publisher>
+      <group>org.ow2.asm</group>
+      <name>asm-util</name>
+      <version>9.3</version>
+      <description>Utilities for ASM, a very small and fast Java bytecode manipulation framework</description>
+      <hashes>
+        <hash alg="MD5">d6d0ac4e5c0be9a25a426c70c714b17b</hash>
+        <hash alg="SHA-1">9595bc05510d0bd4b610188b77333fe4851a1975</hash>
+        <hash alg="SHA-256">70f78f291ca0298afdb567fa85c5667869bc3da3914784816413853994962192</hash>
+        <hash alg="SHA-512">cd37f77075631784b1b3d62cbbcb610160780885f333b4be7d90a9667e31f731fe6b152793ed56fe862fc2d0772a960ed8056791f7d273c047c0e9541a0d5b39</hash>
+        <hash alg="SHA-384">999f032b801c20e08a6160efa2f2b8c12950a5d4d6bd764c9cb5e05b2fe1949e0df9426346f3c5c7a25fd93669208b64</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.ow2.asm/asm-util@9.3?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.ow2.org/</url></reference><reference type="issue-tracker"><url>https://gitlab.ow2.org/asm/asm/issues</url></reference><reference type="mailing-list"><url>https://mail.ow2.org/wws/arc/asm/</url></reference><reference type="vcs"><url>https://gitlab.ow2.org/asm/asm/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.bcel/bcel@6.5.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.bcel</group>
+      <name>bcel</name>
+      <version>6.5.0</version>
+      <description>Apache Commons Bytecode Engineering Library</description>
+      <hashes>
+        <hash alg="MD5">4de81e833dd77627809d1458b984d2fa</hash>
+        <hash alg="SHA-1">79b1975ec0c7a6c1a15e19fb3a58cc4041b4aaea</hash>
+        <hash alg="SHA-256">bdeb381d0d19999e221e6a0f8d8bf44f5b19c2e57eabf68b70dc098652aefaf5</hash>
+        <hash alg="SHA-512">bbc1dcf1ec8ce9f62afebc08011fdbe32e2712967d76af5ae19b29ee5aaa8be9dfef14fcf30257a4ca9dfba34e9701aa12dc3acb880be6df874a36d11469d6df</hash>
+        <hash alg="SHA-384">9f4d2fa4462584089a941aa239fec7d8bff848eeee8ce0e8eee7d5298d5371c0b8e50e25d96d8d2a93ef58454d4e4fd3</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.bcel/bcel@6.5.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.apache.org/</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/BCEL</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-bcel.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/net.jcip/jcip-annotations@1.0?type=jar">
+      <group>net.jcip</group>
+      <name>jcip-annotations</name>
+      <version>1.0</version>
+      <hashes>
+        <hash alg="MD5">9d5272954896c5a5d234f66b7372b17a</hash>
+        <hash alg="SHA-1">afba4942caaeaf46aab0b976afd57cc7c181467e</hash>
+        <hash alg="SHA-256">be5805392060c71474bf6c9a67a099471274d30b83eef84bfc4e0889a4f1dcc0</hash>
+        <hash alg="SHA-512">cb312b3f571d91ef183c119d878f50464ffd97f853b7311cba386463f295e8b7b3a5a89ed4269a045cacd5aa7cb4c803d4882854a0fddefa9bbc28c72aa6c786</hash>
+        <hash alg="SHA-384">20d12f4a68736b8df736b1de233baff5d8ac5d71b92a1ca10dc1eb61293ef88bd3cb434ab71e9027a6d303849e098f28</hash>
+      </hashes>
+      <licenses/>
+      <purl>pkg:maven/net.jcip/jcip-annotations@1.0?type=jar</purl>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.dom4j/dom4j@2.1.3?type=jar">
+      <group>org.dom4j</group>
+      <name>dom4j</name>
+      <version>2.1.3</version>
+      <description>flexible XML framework for Java</description>
+      <hashes>
+        <hash alg="MD5">41efcf234c5a05a8c590f9b51d53ca66</hash>
+        <hash alg="SHA-1">a75914155a9f5808963170ec20653668a2ffd2fd</hash>
+        <hash alg="SHA-256">549f3007c6290f6a901e57d1d331b4ed0e6bf7384f78bf10316ffceeca834de6</hash>
+        <hash alg="SHA-512">c17d210d2a3d304ae03f725fcc6644e44185c945807f4980681972cbff946b5468d1dec84eb4f660627ee1f86ad4b8372990cd63ab956d4eb75a22d20dbd9cd1</hash>
+        <hash alg="SHA-384">930553b442d977537ccc76cf230d28f4c41d19ff438a5a33481942c3cc4dbe42378180c5cfdaf3872a0a8ec5e3518bb5</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.dom4j/dom4j@2.1.3?type=jar</purl>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-lang3@3.12.0?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-lang3</name>
+      <version>3.12.0</version>
+      <description>Apache Commons Lang, a package of Java utility classes for the
+  classes that are in java.lang's hierarchy, or are considered to be so
+  standard as to justify existence in java.lang.</description>
+      <hashes>
+        <hash alg="MD5">19fe50567358922bdad277959ea69545</hash>
+        <hash alg="SHA-1">c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e</hash>
+        <hash alg="SHA-256">d919d904486c037f8d193412da0c92e22a9fa24230b9d67a57855c5c31c7e94e</hash>
+        <hash alg="SHA-512">fbdbc0943cb3498b0148e86a39b773f97c8e6013740f72dbc727faeabea402073e2cc8c4d68198e5fc6b08a13b7700236292e99d4785f2c9989f2e5fac11fd81</hash>
+        <hash alg="SHA-384">c34b8a0e0eba2168ad56fedeb7a1d710b6f1d3f1ce6aae99a4e0247bd120efbbadc8dcb2f731045b8a16e3efd30604dc</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-lang3@3.12.0?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/LANG</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-lang.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-text@1.9?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-text</name>
+      <version>1.9</version>
+      <description>Apache Commons Text is a library focused on algorithms working on strings.</description>
+      <hashes>
+        <hash alg="MD5">c1c130c369aa86bfe4f7a7a920bc0223</hash>
+        <hash alg="SHA-1">ba6ac8c2807490944a0a27f6f8e68fb5ed2e80e2</hash>
+        <hash alg="SHA-256">0812f284ac5dd0d617461d9a2ab6ac6811137f25122dfffd4788a4871e732d00</hash>
+        <hash alg="SHA-512">ad39787c96445737904e343593c03aa4c4e76bd1516ff45e70fc1efd8a53439b1b104c3b0fed4e431d9291ebabf4bff2e5547e0c6510f59160b8ea620bad2ae2</hash>
+        <hash alg="SHA-384">1dbd63c231233e8f24d76a19d7676a136e68abe4fc1ab9dcd4457ef9ab31deb30d5efc7c89372315b9375689d2a590a1</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-text@1.9?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/TEXT</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-text.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.7.2?type=jar">
+      <group>com.github.spotbugs</group>
+      <name>spotbugs-annotations</name>
+      <version>4.7.2</version>
+      <description>Annotations the SpotBugs tool supports</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">f9d6498ee19a3e9ace207f1f6d32bd1d</hash>
+        <hash alg="SHA-1">3546c0a24a083e7fdfdf5986bef76b19c477a264</hash>
+        <hash alg="SHA-256">e2b4c654b2d7897490cf1f22a009ac677be4c92bfc493a0dedb5706f5e489839</hash>
+        <hash alg="SHA-512">d306545aae5e8498a26d2a370c2deb1540d01add801240ececf4a3d5e9b3db6d93258c193e8e827c57cafd8d8d02b681998bd5ba14438ca1e1b36f7d1e37dd73</hash>
+        <hash alg="SHA-384">82d9d467f1b61829bea927dacd631c82fc4435bfde438d85325f7abd3fdab5d994b0c0f38ef2ad8b35e98211f7a2c4c1</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>LGPL-2.1-only</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.github.spotbugs/spotbugs-annotations@4.7.2?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://github.com/spotbugs/spotbugs/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.gson/gson@2.9.1?type=jar">
+      <group>com.google.code.gson</group>
+      <name>gson</name>
+      <version>2.9.1</version>
+      <description>Gson JSON library</description>
+      <hashes>
+        <hash alg="MD5">0d507d266dcf7eea4b53fc3778d901c9</hash>
+        <hash alg="SHA-1">02cc2131b98ebfb04e2b2c7dfb84431f4045096b</hash>
+        <hash alg="SHA-256">378534e339e6e6d50b1736fb3abb76f1c15d1be3f4c13cec6d536412e23da603</hash>
+        <hash alg="SHA-512">10bf91c79ab151b684834e3ca8ba7d7e19742a3eeb580bde690fba433f9fffe3abbd79ed3fe3f97986c3a2badc4d14e28835a8ef89167b4b9cc6014242338769</hash>
+        <hash alg="SHA-384">c50274278af61678dffff13f07de80e6eb1b3522a1f51c71c6b86a8d4911a35e015988e0835c9ef007097bac3417f5ca</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.gson/gson@2.9.1?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://github.com/google/gson/issues</url></reference><reference type="vcs"><url>https://github.com/google/gson/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/jaxen/jaxen@1.2.0?type=jar">
+      <publisher>The Jaxen Project</publisher>
+      <group>jaxen</group>
+      <name>jaxen</name>
+      <version>1.2.0</version>
+      <description>Jaxen is a universal XPath engine for Java.</description>
+      <hashes>
+        <hash alg="MD5">c32cf69356254b8f5050fce6e86358e9</hash>
+        <hash alg="SHA-1">c10535a925bd35129a4329bc75065cc6b5293f2c</hash>
+        <hash alg="SHA-256">70feef9dd75ad064def05a3ce8975aeba515ee7d1be146d12199c8828a64174c</hash>
+        <hash alg="SHA-512">cad582fc12d0741e9e6fd7e0cf80a50feb04f5ef42043df96f8a5b78476c77695d8b43836d2241f76b35676ea759921edd25eaeb2c04ec916eb138aa2901ce5f</hash>
+        <hash alg="SHA-384">8932691b6f88cc0f78a18a995200606713a5a58bcdf1573c78ba856425ce9aed550b90658e1f9a0b13763f2468f7dadf</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <name>BSD License 2.0</name>
+          <url>https://raw.githubusercontent.com/jaxen-xpath/jaxen/master/LICENSE.txt</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/jaxen/jaxen@1.2.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.cafeconleche.org/jaxen</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/jaxen-xpath/jaxen/issues</url></reference><reference type="mailing-list"><url>https://markmail.org/search/?q=list%3Aorg.codehaus.jaxen.user</url></reference><reference type="vcs"><url>https://github.com/jaxen-xpath/jaxen</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/net.sf.saxon/Saxon-HE@11.4?type=jar">
+      <publisher>Saxonica</publisher>
+      <group>net.sf.saxon</group>
+      <name>Saxon-HE</name>
+      <version>11.4</version>
+      <description>The XSLT and XQuery Processor</description>
+      <hashes>
+        <hash alg="MD5">9f35652962ffe9b687fb7e3726600f03</hash>
+        <hash alg="SHA-1">d926a13f2717ad1ea6e051550b8fd6207a587051</hash>
+        <hash alg="SHA-256">42e35494dc2e6b5e97256ae7cdf2b7ce30439c352566f35de02bed3a06a2b169</hash>
+        <hash alg="SHA-512">20f0fdeb8ac6923c130fb684d925cc01ba9457044eb3e44b020df92355a46468bbb9afe0d14008e2ea140eb2adcefc42b82fee251888d6bb56725931e40169c8</hash>
+        <hash alg="SHA-384">e36a586e3edf05c953402a069a8f7cd74f4c88cdd3309867b3b103e84729b3e3a9ec573a5433cad9a9483c2e4a08890a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MPL-2.0-no-copyleft-exception</id>
+          <url>https://www.mozilla.org/MPL/2.0/</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/net.sf.saxon/Saxon-HE@11.4?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://www.saxonica.com/</url></reference><reference type="vcs"><url>https://saxonica.plan.io/projects/saxonmirrorhe/repository</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?type=jar">
+      <group>org.xmlresolver</group>
+      <name>xmlresolver</name>
+      <version>4.4.3</version>
+      <description>An XML entity/uri resolver</description>
+      <hashes>
+        <hash alg="MD5">53b21e6362feb5a904408c5c154cd449</hash>
+        <hash alg="SHA-1">aa8421211b0f69b5572d2d4b4252b2d87f957754</hash>
+        <hash alg="SHA-256">9d642c96c3f6811e20a9f6cfee3ca15ec84ecb939f6be639fee065670773a7d1</hash>
+        <hash alg="SHA-512">94a441ea1ae41718fd275b8590e5bf6edf022b8b31b46bdc1a86df7a225ea0df3c17612acb0ef05ba0690aa58f8b7d1d28107a1d0a7b91145a4504d749ef16c9</hash>
+        <hash alg="SHA-384">be8263fea1af0281118ee523c9278d1e0beb17705aaee9f1e112cfdbb86013522fed25b985b5b27d97f2466efdc986d0</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.xmlresolver/xmlresolver@4.4.3?type=jar</purl>
+      <externalReferences/>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.1.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.httpcomponents.client5</group>
+      <name>httpclient5</name>
+      <version>5.1.3</version>
+      <description>Apache HttpComponents Client</description>
+      <hashes>
+        <hash alg="MD5">757bfb86277b9b11798db8fdb351bf74</hash>
+        <hash alg="SHA-1">13c984b7b881afcff3a7f0bb95878724a48a4b66</hash>
+        <hash alg="SHA-256">28c759254f4e35319e078bb6ffea75676608dc12cb243b24fb3c8732522977fe</hash>
+        <hash alg="SHA-512">4fb38b6bf164103e68320ce430776915a6831923eb3e0b6e6f29ff57647e6bd29efc07d46b107aec23bf9004cfd959fbda8153740ba0060260a54d67ccf8a093</hash>
+        <hash alg="SHA-384">8e6c7bc00b5e25c564faa6f20d01b26288163de846273943bdc7a043348cbe4a5540dc875ed057054c2af5c6e10f8147</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.1.3?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/HTTPCLIENT</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?httpclient-users@hc.apache.org</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.1.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.httpcomponents.core5</group>
+      <name>httpcore5-h2</name>
+      <version>5.1.3</version>
+      <description>Apache HttpComponents HTTP/2 Core Components</description>
+      <hashes>
+        <hash alg="MD5">e12cc9746f6635675a408e641c95b177</hash>
+        <hash alg="SHA-1">4664b59b09f5ee008e37a963bbb92f4068e91696</hash>
+        <hash alg="SHA-256">d0e78ba15aa8ebe77982b660ac4b09a95d6e035dbdbea762577dc1c8e2935807</hash>
+        <hash alg="SHA-512">76a22785285a3c12a98db24d678f1fd695cb4941be438fd80a7c41b4fbf804452694f93947579aba3bcee652671e362ae6d76bfb60a8db75518e52aba4ddad36</hash>
+        <hash alg="SHA-384">cfead6178cd1cc30fcd9da2f8753897a2039e7915eded3278fb74545a49db68a10860ed064e9f52d0f1526e3cd7caa35</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.1.3?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/HTTPCORE</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?httpclient-users@hc.apache.org</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/commons-codec/commons-codec@1.15?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>commons-codec</group>
+      <name>commons-codec</name>
+      <version>1.15</version>
+      <description>The Apache Commons Codec package contains simple encoder and decoders for
+     various formats such as Base64 and Hexadecimal.  In addition to these
+     widely used encoders and decoders, the codec package also maintains a
+     collection of phonetic encoding utilities.</description>
+      <hashes>
+        <hash alg="MD5">303baf002ce6d382198090aedd9d79a2</hash>
+        <hash alg="SHA-1">49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d</hash>
+        <hash alg="SHA-256">b3e9f6d63a790109bf0d056611fbed1cf69055826defeb9894a71369d246ed63</hash>
+        <hash alg="SHA-512">da30a716770795fce390e4dd340a8b728f220c6572383ffef55bd5839655d5611fcc06128b2144f6cdcb36f53072a12ec80b04afee787665e7ad0b6e888a6787</hash>
+        <hash alg="SHA-384">05d0506283716472175d44c2a4766523397bf8a007c18848f9c9a61718cc8aa437f9cb4b91771037ab29a960860b62a0</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/commons-codec/commons-codec@1.15?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/CODEC</url></reference><reference type="vcs"><url>https://github.com/apache/commons-codec</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.httpcomponents.core5</group>
+      <name>httpcore5</name>
+      <version>5.1.3</version>
+      <description>Apache HttpComponents HTTP/1.1 core components</description>
+      <hashes>
+        <hash alg="MD5">e3311847fc70a84038fb2c079dd08c4a</hash>
+        <hash alg="SHA-1">d1638d1e5f2793f187d4144c702a93524ba6fd3b</hash>
+        <hash alg="SHA-256">f2bf2f2c7772169c9e30699719667ad30f9b46c4e9d7841907deb2d12d9923fe</hash>
+        <hash alg="SHA-512">c9b439da0fb0124f37676686c69f8fdb824a30e0d6a3b9ebc0ebca5555727ae18cc5a146d8874b4cfe6fa966d5eb6083a44c379a76017ec79863596a23c571b3</hash>
+        <hash alg="SHA-384">63d37103c0b040ed9f0c70af0bcc9792c68afe8c7da5f445f30458c7c802524f07a1bdb573661e680955a257e0fb6b4c</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/HTTPCORE</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?httpclient-users@hc.apache.org</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar">
+      <group>xml-apis</group>
+      <name>xml-apis</name>
+      <version>1.4.01</version>
+      <description>xml-commons provides an Apache-hosted set of DOM, SAX, and 
+    JAXP interfaces for use in other xml-based projects. Our hope is that we 
+    can standardize on both a common version and packaging scheme for these 
+    critical XML standards interfaces to make the lives of both our developers 
+    and users easier. The External Components portion of xml-commons contains 
+    interfaces that are defined by external standards organizations. For DOM, 
+    that's the W3C; for SAX it's David Megginson and sax.sourceforge.net; for 
+    JAXP it's Sun.</description>
+      <hashes>
+        <hash alg="MD5">7eaad6fea5925cca6c36ee8b3e02ac9d</hash>
+        <hash alg="SHA-1">3789d9fada2d3d458c4ba2de349d48780f381ee3</hash>
+        <hash alg="SHA-256">a840968176645684bb01aed376e067ab39614885f9eee44abe35a5f20ebe7fad</hash>
+        <hash alg="SHA-512">8db0283b6840cd6407957d296b802e3edf90653e2722f8e29f86c1c0b60996c4b43e9e065e6864dab89b2138ddb0174d9b4fdda4a93f94eeb884783db82f3268</hash>
+        <hash alg="SHA-384">bce0ec0f0f692213a1110197c4a11c333673ae0630481255d12b441a8cba70aecfaf104c3d8d9b500ed2a0a19a2bfcce</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+        <license>
+          <id>SAX-PD</id>
+          <url>http://www.saxproject.org/copying.html</url>
+        </license>
+        <license>
+          <name>The W3C License</name>
+          <url>http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/java-binding.zip</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/xml-apis/xml-apis@1.4.01?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>http://issues.apache.org/bugzilla/</url></reference><reference type="mailing-list"><url>http://mail-archives.apache.org/mod_mbox/xml-commons-dev/</url></reference><reference type="vcs"><url>https://svn.apache.org/viewvc/xml/commons/tags/xml-commons-external-1_4_01/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?classifier=data&amp;type=jar">
+      <group>org.xmlresolver</group>
+      <name>xmlresolver</name>
+      <version>4.4.3</version>
+      <hashes>
+        <hash alg="MD5">2bf9b2983c518ababfc8d528539e51ef</hash>
+        <hash alg="SHA-1">89079ec236d9683bb5f6f5cf4bef0cfc01b46e55</hash>
+        <hash alg="SHA-256">a57db23d75c3580cb15eb6e1a854683f4579cfd265f5cf1011a6983d9aed0f1f</hash>
+        <hash alg="SHA-512">2ad09a69beca1253d35143cb0016811197a2a967252dcec35ec2c4ccde605e7a4e869c2b45161fe38b93a6ac2d5fab95e28c0337ce0ea1126a3db2aac5462e65</hash>
+        <hash alg="SHA-384">37fa6d0e58bd9e6bda6afb892d1224977e9de16864c35a3189aa51f0a55327686fcdb2cc71b0a1b4005c4c4dc23aa8e2</hash>
+      </hashes>
+      <purl>pkg:maven/org.xmlresolver/xmlresolver@4.4.3?classifier=data&amp;type=jar</purl>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar">
+      <publisher>QOS.ch</publisher>
+      <group>org.slf4j</group>
+      <name>slf4j-api</name>
+      <version>1.7.36</version>
+      <description>The slf4j API</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">872da51f5de7f3923da4de871d57fd85</hash>
+        <hash alg="SHA-1">6c62681a2f655b49963a5983b8b0950a6120ae14</hash>
+        <hash alg="SHA-256">d3ef575e3e4979678dc01bf1dcce51021493b4d11fb7f1be8ad982877c16a1c0</hash>
+        <hash alg="SHA-512">f9b033fc019a44f98b16048da7e2b59edd4a6a527ba60e358f65ab88e0afae03a9340f1b3e8a543d49fa542290f499c5594259affa1ff3e6e7bf3b428d4c610b</hash>
+        <hash alg="SHA-384">2b14ad035877087157e379d3277dcdcd79e58d6bdb147c47d29e377d75ce53ad42cafbf22f5fb7827c7e946ff4876b9a</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+          <url>https://opensource.org/licenses/MIT</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.qos.ch</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/qos-ch/slf4j</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="pkg:maven/dev.openfeature/sdk@0.3.1-SNAPSHOT?type=jar">
+      <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.24?type=jar"/>
+      <dependency ref="pkg:maven/com.github.spotbugs/spotbugs@4.7.2?type=jar"/>
+      <dependency ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.projectlombok/lombok@1.18.24?type=jar"/>
+    <dependency ref="pkg:maven/com.github.spotbugs/spotbugs@4.7.2?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-commons@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-util@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.bcel/bcel@6.5.0?type=jar"/>
+      <dependency ref="pkg:maven/net.jcip/jcip-annotations@1.0?type=jar"/>
+      <dependency ref="pkg:maven/org.dom4j/dom4j@2.1.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.12.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-text@1.9?type=jar"/>
+      <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.7.2?type=jar"/>
+      <dependency ref="pkg:maven/com.google.code.gson/gson@2.9.1?type=jar"/>
+      <dependency ref="pkg:maven/jaxen/jaxen@1.2.0?type=jar"/>
+      <dependency ref="pkg:maven/net.sf.saxon/Saxon-HE@11.4?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar"/>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-commons@9.3?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.ow2.asm/asm-util@9.3?type=jar">
+      <dependency ref="pkg:maven/org.ow2.asm/asm@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-tree@9.3?type=jar"/>
+      <dependency ref="pkg:maven/org.ow2.asm/asm-analysis@9.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.bcel/bcel@6.5.0?type=jar"/>
+    <dependency ref="pkg:maven/net.jcip/jcip-annotations@1.0?type=jar"/>
+    <dependency ref="pkg:maven/org.dom4j/dom4j@2.1.3?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.12.0?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.commons/commons-text@1.9?type=jar"/>
+    <dependency ref="pkg:maven/com.github.spotbugs/spotbugs-annotations@4.7.2?type=jar">
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    <dependency ref="pkg:maven/com.google.code.gson/gson@2.9.1?type=jar"/>
+    <dependency ref="pkg:maven/jaxen/jaxen@1.2.0?type=jar"/>
+    <dependency ref="pkg:maven/net.sf.saxon/Saxon-HE@11.4?type=jar">
+      <dependency ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?type=jar"/>
+      <dependency ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?classifier=data&amp;type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.1.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/commons-codec/commons-codec@1.15?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5-h2@5.1.3?type=jar">
+      <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/commons-codec/commons-codec@1.15?type=jar"/>
+    <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
+    <dependency ref="pkg:maven/org.xmlresolver/xmlresolver@4.4.3?classifier=data&amp;type=jar">
+      <dependency ref="pkg:maven/org.apache.httpcomponents.client5/httpclient5@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.httpcomponents.core5/httpcore5@5.1.3?type=jar"/>
+      <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"/>
+  </dependencies>
+</bom>

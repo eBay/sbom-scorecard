@@ -23,12 +23,13 @@ test: ## Run the unit tests
 phony:
 	@echo Use specific targets to download individual needed files.
 
+examples: examples/julia.spdx.json examples/dropwizard.cyclonedx.json examples/openfeature-javasdk.cyclonedx.xml
 examples/julia.spdx.json:
 	curl -Lo examples/julia.spdx.json https://github.com/JuliaLang/julia/raw/master/julia.spdx.json
-
 examples/dropwizard.cyclonedx.json:
 	curl -Lo examples/dropwizard.cyclonedx.json https://github.com/CycloneDX/bom-examples/raw/master/SBOM/dropwizard-1.3.15/bom.json
-
+examples/openfeature-javasdk.cyclonedx.xml:
+	curl -Lo examples/openfeature-javasdk.cyclonedx.xml https://s01.oss.sonatype.org/content/repositories/snapshots/dev/openfeature/sdk/0.3.1-SNAPSHOT/sdk-0.3.1-20221014.132148-1-cyclonedx.xml
 
 slsa: slsa/goreleaser-linux-amd64.yml slsa/goreleaser-linux-arm64.yml slsa/goreleaser-darwin-amd64.yml slsa/goreleaser-darwin-arm64.yml slsa/goreleaser-windows-amd64.yml slsa/goreleaser-windows-arm64.yml
 

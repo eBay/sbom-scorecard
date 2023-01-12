@@ -1,8 +1,9 @@
 package cdx
 
 import (
+	"bytes"
 	"fmt"
-	"os"
+	"io/ioutil"
 	"strings"
 
 	cdx "github.com/CycloneDX/cyclonedx-go"
@@ -81,23 +82,31 @@ func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
-	f, err := os.Open(filename)
+	contents, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Printf("Error while opening %v for reading: %v", filename, err)
 		return nil
 	}
-	defer f.Close()
 
 	r := CycloneDXReport{}
+	formats := []cdx.BOMFileFormat{cdx.BOMFileFormatJSON, cdx.BOMFileFormatXML}
 
 	bom := new(cdx.BOM)
-	decoder := cdx.NewBOMDecoder(f, cdx.BOMFileFormatJSON)
-	if err = decoder.Decode(bom); err != nil {
-		r.valid = false
-		r.docError = err
+	for _, format := range formats {
+		decoder := cdx.NewBOMDecoder(bytes.NewReader(contents), format)
+		if err = decoder.Decode(bom); err != nil {
+			r.valid = false
+			r.docError = err
+		} else {
+			r.valid = true
+			r.docError = nil
+			break
+		}
+	}
+
+	if !r.valid {
 		return &r
 	}
-	r.valid = true
 
 	if bom.Metadata.Tools != nil {
 		for _, t := range *bom.Metadata.Tools {

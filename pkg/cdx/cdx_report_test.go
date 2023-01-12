@@ -41,3 +41,20 @@ Total points: 85/100 or 85%` {
 		t.Fail()
 	}
 }
+
+func TestCycloneXML(t *testing.T) {
+	r := GetCycloneDXReport("../../examples/openfeature-javasdk.cyclonedx.xml")
+
+	report_text := scorecard.Grade(r)
+
+	if strings.Trim(report_text, " \n") != `Spec Compliance: 25/25
+Package ID: 10/20 (100% have purls and 0% have CPEs)
+Package Versions: 20/20
+Package Licenses: 18/20
+Creation Info: 15/15
+Total points: 88/100 or 88%` {
+		t.Log("Incorrect report text generated.\n" +
+			"Got this:\n" + report_text)
+		t.Fail()
+	}
+}
