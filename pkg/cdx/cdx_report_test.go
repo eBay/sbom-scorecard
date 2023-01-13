@@ -22,6 +22,7 @@ func TestCycloneE2eReport(t *testing.T) {
 	assertTextEqual(t,
 		report_text,
 		`167 total packages
+100% have versions.
 79% have licenses.
 100% have package digest.
 100% have purls.
