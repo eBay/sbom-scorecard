@@ -79,7 +79,7 @@ func (r *SpdxReport) PackageVersions() scorecard.ReportValue {
 		}
 	}
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasPackVer / r.totalPackages),
+		Ratio: float32(r.hasPackVer) / float32(r.totalPackages),
 	}
 }
 
@@ -91,7 +91,7 @@ func (r *SpdxReport) PackageLicenses() scorecard.ReportValue {
 		}
 	}
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasLicense / r.totalPackages),
+		Ratio: float32(r.hasLicense) / float32(r.totalPackages),
 	}
 }
 
