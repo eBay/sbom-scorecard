@@ -17,17 +17,19 @@ type CycloneDXReport struct {
 	creationToolName    int
 	creationToolVersion int
 
-	totalPackages int
-	hasLicense    int
-	hasPackDigest int
-	hasPurl       int
-	hasCPE        int
+	totalPackages  int
+	hasLicense     int
+	hasPackVersion int
+	hasPackDigest  int
+	hasPurl        int
+	hasCPE         int
 }
 
 func (r *CycloneDXReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
 
+	sb.WriteString(fmt.Sprintf("%d%% have versions.\n", scorecard.PrettyPercent(r.hasPackVersion, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have licenses.\n", scorecard.PrettyPercent(r.hasLicense, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have package digest.\n", scorecard.PrettyPercent(r.hasPackDigest, r.totalPackages)))
 	sb.WriteString(fmt.Sprintf("%d%% have purls.\n", scorecard.PrettyPercent(r.hasPurl, r.totalPackages)))
@@ -65,6 +67,12 @@ func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
 }
 
 func (r *CycloneDXReport) PackageVersions() scorecard.ReportValue {
+	return scorecard.ReportValue{
+		Ratio: float32(r.hasPackVersion) / float32(r.totalPackages),
+	}
+}
+
+func (r *CycloneDXReport) PackageDigests() scorecard.ReportValue {
 	return scorecard.ReportValue{
 		Ratio: float32(r.hasPackDigest) / float32(r.totalPackages),
 	}
@@ -127,6 +135,9 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 			}
 			if p.Hashes != nil && len(*p.Hashes) > 0 {
 				r.hasPackDigest += 1
+			}
+			if p.Version != "" {
+				r.hasPackVersion += 1
 			}
 			if p.PackageURL != "" {
 				r.hasPurl += 1
