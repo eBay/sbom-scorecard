@@ -1,0 +1,193 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /tmp
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 100
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 42
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 5000
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 1
+    content: "$ "
+  - delay: 646
+    content: go install github.com/ebay/sbom-scorecard/cmd/sbom-scorecard@latest
+  - delay: 1158
+    content: "\r\n"
+  - delay: 1041
+    content: "go: downloading github.com/ebay/sbom-scorecard v0.0.0-20230117174011-effef3b7e792\r\n"
+  - delay: 845
+    content: "go: finding module for package github.com/spdx/gordf/uri\r\ngo: finding module for package github.com/spdx/gordf/rdfloader/parser\r\ngo: finding module for package github.com/spdx/gordf/rdfloader\r\ngo: finding module for package github.com/spdx/gordf/rdfwriter\r\n"
+  - delay: 289
+    content: "go: downloading github.com/spdx/gordf v0.0.0-20221230105357-b735bd5aac89\r\n"
+  - delay: 560
+    content: "go: found github.com/spdx/gordf/rdfloader in github.com/spdx/gordf v0.0.0-20221230105357-b735bd5aac89\r\ngo: found github.com/spdx/gordf/rdfloader/parser in github.com/spdx/gordf v0.0.0-20221230105357-b735bd5aac89\r\ngo: found github.com/spdx/gordf/rdfwriter in github.com/spdx/gordf v0.0.0-20221230105357-b735bd5aac89\r\ngo: found github.com/spdx/gordf/uri in github.com/spdx/gordf v0.0.0-20221230105357-b735bd5aac89\r\n"
+  - delay: 1235
+    content: "\e]7;file://C02C780ZMD6R/Users/jabrahms/src/github.com/ericaabrahms/sbom-scorecard-website\aC02C780ZMD6R:sbom-scorecard-website jabrahms$ "
+  - delay: 378
+    content: s
+  - delay: 83
+    content: b
+  - delay: 11
+    content: o
+  - delay: 89
+    content: m
+  - delay: 29
+    content: '-'
+  - delay: 13
+    content: s
+  - delay: 14
+    content: c
+  - delay: 15
+    content: o
+  - delay: 11
+    content: r
+  - delay: 37
+    content: 'ecard '
+  - delay: 153
+    content: s
+  - delay: 87
+    content: c
+  - delay: 98
+    content: o
+  - delay: 03
+    content: r
+  - delay: 47
+    content: e
+  - delay: 71
+    content: ' '
+  - delay: 49
+    content: '~'
+  - delay: 81
+    content: /
+  - delay: 67
+    content: D
+  - delay: 09
+    content: o
+  - delay: 31
+    content: w
+  - delay: 89
+    content: nloads/
+  - delay: 43
+    content: p
+  - delay: 20
+    content: h
+  - delay: 89
+    content: o
+  - delay: 28
+    content: "\aton."
+  - delay: 264
+    content: j
+  - delay: 96
+    content: 'son.txt '
+  - delay: 184
+    content: "\r\n"
+  - delay: 54
+    content: "Guessed: spdx\r\n38 total packages\r\n0 total files\r\n94% have licenses.\r\n2% have package digest.\r\n97% have package versions.\r\n0% have purls.\r\n0% have CPEs.\r\n0% have file digest.\r\nSpec valid? true\r\nHas creation info? true\r\n==\r\nSpec Compliance: 25/25\r\nPackage ID: 0/20 (0% have purls and 0% have CPEs)\r\nPackage Versions: 0/20\r\nPackage Licenses: 0/20\r\nCreation Info: 15/15\r\nTotal points: 40/100 or 40%\r\n\e]7;file://C02C780ZMD6R/Users/jabrahms/src/github.com/ericaabrahms/sbom-scorecard-website\aC02C780ZMD6R:sbom-scorecard-website jabrahms$ "
+  - delay: 18139
+    content: "logout\r\n\r\nSaving session..."
+  - delay: 12
+    content: "completed.\r\n"
