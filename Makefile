@@ -50,3 +50,6 @@ slsa/goreleaser-windows-arm64.yml:
 
 TEMPLATE:
 	cat slsa/template.yml | sed -e s/OS_HERE/${GOOS}/g | sed -e s/ARCH_HERE/${GOARCH}/g > slsa/goreleaser-${GOOS}-${GOARCH}.yml
+
+gif:
+	npx terminalizer render sbom-scorecard --output usage.gif

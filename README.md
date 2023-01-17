@@ -6,6 +6,8 @@ When generating first-party SBOMs, it's hard to know if you're generating someth
 
 SPDX, CycloneDX and Syft are all in scope for this repo.
 
+![](./usage.gif)
+
 ## Installation and Usage
 
 1. Download the pre-compiled, platform-appropriate binary from
