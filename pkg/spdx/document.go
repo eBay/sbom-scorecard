@@ -26,6 +26,7 @@ type Document_23 v2_3.Document
 
 type Package struct {
 	PackageLicenseConcluded   string
+	PackageLicenseDeclared    string
 	PackageExternalReferences []*PackageExternalReference
 	PackageChecksums          []common.Checksum
 	PackageVersion            string
@@ -123,6 +124,7 @@ func NewPackage() *Package {
 func (p *Package) read22(sp *v2_2.Package) {
 	p.PackageExternalReferences = externalReferences(sp)
 	p.PackageLicenseConcluded = sp.PackageLicenseConcluded
+	p.PackageLicenseDeclared = sp.PackageLicenseDeclared
 	p.PackageChecksums = sp.PackageChecksums
 	p.PackageVersion = sp.PackageVersion
 }
@@ -130,6 +132,7 @@ func (p *Package) read22(sp *v2_2.Package) {
 func (p *Package) read23(sp *v2_3.Package) {
 	p.PackageExternalReferences = externalReferences(sp)
 	p.PackageLicenseConcluded = sp.PackageLicenseConcluded
+	p.PackageLicenseDeclared = sp.PackageLicenseDeclared
 	p.PackageChecksums = sp.PackageChecksums
 	p.PackageVersion = sp.PackageVersion
 }

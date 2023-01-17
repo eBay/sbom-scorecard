@@ -156,6 +156,10 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 				p.PackageLicenseConcluded != "NOASSERTION" &&
 				p.PackageLicenseConcluded != "" {
 				sr.hasLicense += 1
+			} else if p.PackageLicenseDeclared != "NONE" &&
+				p.PackageLicenseDeclared != "NOASSERTION" &&
+				p.PackageLicenseDeclared != "" {
+				sr.hasLicense += 1
 			}
 
 			if len(p.PackageChecksums) > 0 {
