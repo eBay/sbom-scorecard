@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"errors"
@@ -34,7 +33,7 @@ func init() {
 }
 
 func determineSbomType(filepath string) string {
-	content, err := ioutil.ReadFile(filepath)
+	content, err := os.ReadFile(filepath)
 	if err != nil {
 		panic(fmt.Sprintf("Error! %v", err))
 	}

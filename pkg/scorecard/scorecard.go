@@ -32,8 +32,14 @@ type ScoreValue struct {
 	MaxPoints float32
 }
 
+func isNaN(f float32) bool { return f != f }
+
 func (sv *ScoreValue) Score() float32 {
-	return sv.Ratio * sv.MaxPoints
+	if isNaN(sv.Ratio) {
+		return 0
+	} else {
+		return sv.Ratio * sv.MaxPoints
+	}
 }
 
 type ReportResult struct {

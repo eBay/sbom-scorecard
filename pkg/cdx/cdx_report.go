@@ -3,7 +3,7 @@ package cdx
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	cdx "github.com/CycloneDX/cyclonedx-go"
@@ -23,6 +23,11 @@ type CycloneDXReport struct {
 	hasPackDigest  int
 	hasPurl        int
 	hasCPE         int
+}
+
+var missingPackages = scorecard.ReportValue{
+	Ratio:     0,
+	Reasoning: "No packages",
 }
 
 func (r *CycloneDXReport) Report() string {
@@ -57,6 +62,9 @@ func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
 }
 
 func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
+	if r.totalPackages == 0 {
+		return missingPackages
+	}
 	purlPercent := scorecard.PrettyPercent(r.hasPurl, r.totalPackages)
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
 	return scorecard.ReportValue{
@@ -90,7 +98,7 @@ func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
-	contents, err := ioutil.ReadFile(filename)
+	contents, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Printf("Error while opening %v for reading: %v", filename, err)
 		return nil
@@ -116,7 +124,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 		return &r
 	}
 
-	if bom.Metadata.Tools != nil {
+	if bom.Metadata != nil && bom.Metadata.Tools != nil {
 		for _, t := range *bom.Metadata.Tools {
 			if t.Name != "" {
 				r.creationToolName += 1
