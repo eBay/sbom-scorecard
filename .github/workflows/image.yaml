@@ -1,0 +1,47 @@
+name: image
+
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    outputs:
+      commit-date: ${{ steps.ldflags.outputs.commit-date }}
+      commit: ${{ steps.ldflags.outputs.commit }}
+      version: ${{ steps.ldflags.outputs.version }}
+      tree-state: ${{ steps.ldflags.outputs.tree-state }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+          check-latest: true
+      - uses: sigstore/cosign-installer@v2.8.1
+      - uses: ko-build/setup-ko@v0.6
+      - id: ldflags
+        run: |
+          echo "commit-date=$(git log --date=iso8601-strict -1 --pretty=%ct)" >> "$GITHUB_OUTPUT"
+          echo "commit=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          echo "version=$(git describe --tags --always --dirty | cut -c2-)" >> "$GITHUB_OUTPUT"
+          echo "tree-state=$(if git diff --quiet; then echo "clean"; else echo "dirty"; fi)" >> "$GITHUB_OUTPUT"
+      - name: Publish and sign image
+        env:
+          KO_DOCKER_REPO: ghcr.io/${{ github.repository }}
+          COSIGN_EXPERIMENTAL: 'true'
+        run: |
+          export LDGLAGS="-X main.Version=${{needs.args.outputs.version}} -X main.Commit=${{needs.args.outputs.commit}} -X main.CommitDate=${{needs.args.outputs.commit-date}} -X main.TreeState=${{needs.args.outputs.tree-state}}"
+          echo "${{ github.token }}" | ko login ghcr.io --username "${{ github.actor }}" --password-stdin
+          img=$(ko build --bare --platform=all -t latest -t ${{ github.sha }} ./cmd/sbom-scorecard)
+          echo "built ${img}"
+          cosign sign ${img} \
+              -a sha=${{ github.sha }} \
+              -a run_id=${{ github.run_id }} \
+              -a run_attempt=${{ github.run_attempt }}

@@ -1,0 +1,6 @@
+baseImageOverride: cgr.dev/chainguard/static:latest
+
+builds:
+- id: sbom-scorecard
+  ldflags:
+  - "{{ .Env.LDFLAGS }}"
