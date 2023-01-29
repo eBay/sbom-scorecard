@@ -70,5 +70,5 @@ Package ID: 0/20 (0% have purls and 0% have CPEs)
 Package Versions: 0/20
 Package Licenses: 0/20
 Creation Info: 0/15
-Total points: 0/100 or 85%`)
+Total points: 0/100 or 0%`)
 }
