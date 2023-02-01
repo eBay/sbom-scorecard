@@ -2,7 +2,7 @@ module github.com/ebay/sbom-scorecard
 
 go 1.19
 
-require github.com/spdx/tools-golang v0.3.1-0.20221108182156-8a01147e6342
+require github.com/spdx/tools-golang v0.4.0
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
