@@ -20,8 +20,8 @@
             "downloadLocation": "git+https://github.com/JuliaLang/julia.git@v1.9.0-DEV",
             "filesAnalyzed": false,
             "homepage": "https://julialang.org",
-            "licenseConcluded": "MIT",
-            "licenseDeclared": "MIT",
+            "licenseConcluded": "LicenseRef-23",
+            "licenseDeclared": "LicenseRef-23",
             "copyrightText": "Copyright (c) 2009-2022: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, and other contributors: https://github.com/JuliaLang/julia/contributors",
             "summary": "Julia is a high-level, high-performance dynamic language for technical computing.",
             "comment": "In addition to the source code described by this package, Julia pulls in code from many other repositories, which are also described in this document. See relationships for details."
