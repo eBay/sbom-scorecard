@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+
+	"github.com/alexeyco/simpletable"
 )
 
 type ReportValue struct {
@@ -93,6 +95,13 @@ func JsonGrade(sr SbomReport) string {
 	return string(out)
 }
 
+func getReasoningText(sv ScoreValue) string {
+	// fmt.Sprintf("%d/%d", int(sv.Score()), int(sv.MaxPoints))
+	if sv.Reasoning != "" {
+		fmt.Sprintf("(%s)", sv.Reasoning)
+	}
+	return ""
+}
 func getReportValueInfo(title string, sv ScoreValue) string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%s: %d/%d", title, int(sv.Score()), int(sv.MaxPoints)))
@@ -102,7 +111,6 @@ func getReportValueInfo(title string, sv ScoreValue) string {
 	sb.WriteString("\n")
 	return sb.String()
 }
-
 func Grade(sr SbomReport) string {
 	sv := getScore(sr)
 	var sb strings.Builder
@@ -117,7 +125,94 @@ func Grade(sr SbomReport) string {
 
 	return sb.String()
 }
+func GradeTableFormat(sr SbomReport) {
+	sv := getScore(sr)
+	// sb.WriteString(getReportValueInfo("Spec Compliance", sv.Compliance))
+	// sb.WriteString(getReportValueInfo("Package ID", sv.PackageIdentification))
+	// sb.WriteString(getReportValueInfo("Package Versions", sv.PackageVersions))
+	// sb.WriteString(getReportValueInfo("Package Licenses", sv.PackageLicenses))
+	// sb.WriteString(getReportValueInfo("Creation Info", sv.CreationInfo))
+	// sb.WriteString()
+	table := simpletable.New()
 
+	table.Header = &simpletable.Header{
+		Cells: []*simpletable.Cell{
+			{Align: simpletable.AlignCenter, Text: "#"},
+			{Align: simpletable.AlignCenter, Text: "Criteria"},
+			{Align: simpletable.AlignCenter, Text: "Points"},
+			{Align: simpletable.AlignCenter, Text: "Reasoning"},
+		},
+	}
+
+	var n int
+
+	var cells [][]*simpletable.Cell
+	// ("Spec Compliance", sv.Compliance)
+	n++
+	cells = append(cells, *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: "Spec Compliance"},
+		{Text: fmt.Sprintf("%d/%d", int(sv.Compliance.Score()), int(sv.Compliance.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", sv.Compliance.Reasoning))},
+	})
+	// ("Package ID", sv.PackageIdentification)
+	n++
+	cells = append(cells, *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: "Package ID"},
+		{Text: fmt.Sprintf("%d/%d", int(sv.PackageIdentification.Score()), int(sv.PackageIdentification.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", sv.PackageIdentification.Reasoning))},
+	})
+	// ("Package Versions", sv.PackageVersions)
+	n++
+	cells = append(cells, *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: "Package Versions"},
+		{Text: fmt.Sprintf("%d/%d", int(sv.PackageVersions.Score()), int(sv.PackageVersions.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", sv.PackageVersions.Reasoning))},
+	})
+	// ("Package Licenses", sv.PackageLicenses)
+	n++
+	cells = append(cells, *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: "Package Licenses"},
+		{Text: fmt.Sprintf("%d/%d", int(sv.PackageLicenses.Score()), int(sv.PackageLicenses.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", sv.PackageLicenses.Reasoning))},
+	})
+	// ("Creation Info", sv.CreationInfo)
+	n++
+	cells = append(cells, *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: "Creation Info"},
+		{Text: fmt.Sprintf("%d/%d", int(sv.CreationInfo.Score()), int(sv.CreationInfo.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", sv.CreationInfo.Reasoning))},
+	})
+
+	table.Body = &simpletable.Body{Cells: cells}
+	total := fmt.Sprintf("Total points: %d/%d or %d%%\n", int(sv.Total.Score()), int(sv.Total.MaxPoints), PrettyPercent(int(sv.Total.Score()), int(sv.Total.MaxPoints)))
+	table.Footer = &simpletable.Footer{Cells: []*simpletable.Cell{
+		{Align: simpletable.AlignCenter, Span: 4, Text: yellow(total)},
+	}}
+
+	table.SetStyle(simpletable.StyleUnicode)
+	table.Println()
+}
+
+const (
+	ColorDefault = "\x1b[39m"
+	ColorRed     = "\x1b[91m"
+	ColorYellow  = "\x1b[93m"
+	ColorGreen   = "\x1b[32m"
+	ColorBlue    = "\x1b[94m"
+	ColorGray    = "\x1b[90m"
+)
+
+func red(s string) string {
+	return fmt.Sprintf("%s%s%s", ColorRed, s, ColorDefault)
+}
+func yellow(s string) string {
+	return fmt.Sprintf("%s%s%s", ColorYellow, s, ColorDefault)
+}
 func PrettyPercent(num, denom int) int {
 	if denom == 0 {
 		return 0

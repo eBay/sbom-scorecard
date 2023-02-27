@@ -1,3 +1,4 @@
 /sbom-scorecard
 /bin
 coverage.txt
+.vscode/settings.json
