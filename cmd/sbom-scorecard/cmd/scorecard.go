@@ -74,8 +74,10 @@ var scoreCmd = &cobra.Command{
 			fmt.Println(scorecard.JsonGrade(r))
 		} else {
 			print(r.Report())
-			print("==\n")
-			print(scorecard.Grade(r))
+			// print("==\n")
+			// print(scorecard.Grade(r))
+			print("========RESULT========\n")
+			scorecard.GradeTableFormat(r)
 		}
 	},
 }
