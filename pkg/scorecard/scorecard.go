@@ -96,7 +96,6 @@ func JsonGrade(sr SbomReport) string {
 }
 
 func getReasoningText(sv ScoreValue) string {
-	// fmt.Sprintf("%d/%d", int(sv.Score()), int(sv.MaxPoints))
 	if sv.Reasoning != "" {
 		fmt.Sprintf("(%s)", sv.Reasoning)
 	}
