@@ -126,12 +126,6 @@ func Grade(sr SbomReport) string {
 }
 func GradeTableFormat(sr SbomReport) {
 	sv := getScore(sr)
-	// sb.WriteString(getReportValueInfo("Spec Compliance", sv.Compliance))
-	// sb.WriteString(getReportValueInfo("Package ID", sv.PackageIdentification))
-	// sb.WriteString(getReportValueInfo("Package Versions", sv.PackageVersions))
-	// sb.WriteString(getReportValueInfo("Package Licenses", sv.PackageLicenses))
-	// sb.WriteString(getReportValueInfo("Creation Info", sv.CreationInfo))
-	// sb.WriteString()
 	table := simpletable.New()
 
 	table.Header = &simpletable.Header{
