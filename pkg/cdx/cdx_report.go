@@ -3,7 +3,7 @@ package cdx
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	cdx "github.com/CycloneDX/cyclonedx-go"
@@ -98,7 +98,7 @@ func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
-	contents, err := ioutil.ReadFile(filename)
+	contents, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Printf("Error while opening %v for reading: %v", filename, err)
 		return nil
