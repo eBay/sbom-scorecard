@@ -18,6 +18,7 @@ import (
 var flags = struct {
 	sbomType     string
 	outputFormat string
+	debug        bool
 }{}
 
 type options struct {
@@ -25,11 +26,14 @@ type options struct {
 	// path to file being evaluated
 	path         string
 	outputFormat string
+	debug        bool
 }
 
 func init() {
 	scoreCmd.PersistentFlags().StringVar(&flags.sbomType, "sbomtype", "guess", "type of sbom being evaluated")
 	scoreCmd.PersistentFlags().StringVar(&flags.outputFormat, "outputFormat", "text", "format to output")
+	scoreCmd.PersistentFlags().BoolVar(&flags.debug, "debug", false, "debug output")
+
 	_ = scoreCmd.MarkPersistentFlagRequired("sbomType")
 }
 
@@ -60,7 +64,9 @@ var scoreCmd = &cobra.Command{
 
 		if opts.sbomType == "guess" {
 			opts.sbomType = determineSbomType(opts.path)
-			print("Guessed: " + opts.sbomType + "\n")
+			if opts.debug {
+				print("Guessed: " + opts.sbomType + "\n")
+			}
 		}
 
 		switch opts.sbomType {
@@ -73,10 +79,10 @@ var scoreCmd = &cobra.Command{
 		if opts.outputFormat == "json" {
 			fmt.Println(scorecard.JsonGrade(r))
 		} else {
-			print(r.Report())
-			// print("==\n")
-			// print(scorecard.Grade(r))
-			print("========RESULT========\n")
+			if opts.debug {
+				print(r.Report())
+				print("==\n")
+			}
 			scorecard.GradeTableFormat(r)
 		}
 	},
@@ -100,5 +106,6 @@ func validateFlags(args []string) (options, error) {
 		return opts, fmt.Errorf("expected positional argument for file_path")
 	}
 	opts.path = args[0]
+	opts.debug = flags.debug
 	return opts, nil
 }
