@@ -130,15 +130,23 @@ func (r *SpdxReport) CreationInfo() scorecard.ReportValue {
 		}
 	}
 
+	var score float32
+	score = 1.0
+	reasons := []string{}
+
 	if !hasVersion {
-		return scorecard.ReportValue{
-			Ratio:     .2,
-			Reasoning: "The tool used to create the sbom does not have a version",
-		}
+		score -= .2
+		reasons = append(reasons, "The tool used to create the sbom does not have a version")
+	}
+
+	if r.doc.GetCreationInfo().Created == "" {
+		score -= .2
+		reasons = append(reasons, "There is no timestamp for when the sbom was created")
 	}
 
 	return scorecard.ReportValue{
-		Ratio: 1,
+		Ratio:     score,
+		Reasoning: strings.Join(reasons, ", "),
 	}
 
 }
