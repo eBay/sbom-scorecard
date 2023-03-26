@@ -32,6 +32,12 @@ type SpdxReport struct {
 	hasPackVer    int
 }
 
+func (r *SpdxReport) Metadata() scorecard.ReportMetadata {
+	return scorecard.ReportMetadata{
+		TotalPackages: r.totalPackages,
+	}
+}
+
 func (r *SpdxReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))

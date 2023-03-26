@@ -20,12 +20,17 @@ const packageSectionWeight = 20
 // TODO capture generation points
 const maxPoints = validPoints + packageSectionWeight*3
 
+type ReportMetadata struct {
+	TotalPackages int
+}
+
 type SbomReport interface {
 	IsSpecCompliant() ReportValue
 	PackageIdentification() ReportValue
 	PackageVersions() ReportValue
 	PackageLicenses() ReportValue
 	CreationInfo() ReportValue
+	Metadata() ReportMetadata
 	Report() string
 }
 
@@ -45,6 +50,7 @@ type ReportResult struct {
 	PackageLicenses       ScoreValue
 	CreationInfo          ScoreValue
 	Total                 ScoreValue
+	Metadata              ReportMetadata
 }
 
 func reportValueToScore(rv ReportValue, maxPoints float32) ScoreValue {
@@ -63,6 +69,9 @@ func getScore(sr SbomReport) ReportResult {
 		PackageVersions:       reportValueToScore(sr.PackageVersions(), packageSectionWeight),
 		PackageLicenses:       reportValueToScore(sr.PackageLicenses(), packageSectionWeight),
 		CreationInfo:          reportValueToScore(sr.CreationInfo(), generationPoints),
+		Metadata: ReportMetadata{
+			TotalPackages: sr.Metadata().TotalPackages,
+		},
 	}
 	var totalPoints float32
 	var maxPoints float32

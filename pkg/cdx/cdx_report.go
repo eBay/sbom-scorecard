@@ -25,6 +25,12 @@ type CycloneDXReport struct {
 	hasCPE         int
 }
 
+func (r *CycloneDXReport) Metadata() scorecard.ReportMetadata {
+	return scorecard.ReportMetadata{
+		TotalPackages: r.totalPackages,
+	}
+}
+
 func (r *CycloneDXReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
