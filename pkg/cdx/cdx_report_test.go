@@ -38,11 +38,11 @@ func TestCycloneE2eGrade(t *testing.T) {
 	assertTextEqual(t,
 		report_text,
 		`Spec Compliance: 25/25
-Package ID: 10/20 (100% have purls and 0% have CPEs)
+Package ID: 20/20 (100% have either a purl (100%) or CPE (0%))
 Package Versions: 20/20
 Package Licenses: 15/20
 Creation Info: 15/15
-Total points: 85/100 or 85%`)
+Total points: 95/100 or 95%`)
 }
 
 func TestCycloneXML(t *testing.T) {
@@ -52,9 +52,9 @@ func TestCycloneXML(t *testing.T) {
 	assertTextEqual(t,
 		report_text,
 		`Spec Compliance: 25/25
-Package ID: 10/20 (100% have purls and 0% have CPEs)
+Package ID: 20/20 (100% have either a purl (100%) or CPE (0%))
 Package Versions: 20/20
 Package Licenses: 18/20
 Creation Info: 15/15
-Total points: 88/100 or 88%`)
+Total points: 98/100 or 98%`)
 }

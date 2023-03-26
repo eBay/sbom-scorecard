@@ -28,6 +28,7 @@ type SpdxReport struct {
 	hasPackDigest int
 	hasPurl       int
 	hasCPE        int
+	hasPurlOrCPE  int
 	hasFileDigest int
 	hasPackVer    int
 }
@@ -70,10 +71,11 @@ func (r *SpdxReport) PackageIdentification() scorecard.ReportValue {
 	}
 	purlPercent := scorecard.PrettyPercent(r.hasPurl, r.totalPackages)
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
+	either := scorecard.PrettyPercent(r.hasPurlOrCPE, r.totalPackages)
 	return scorecard.ReportValue{
 		// What percentage has both Purl & CPEs?
-		Ratio:     float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2),
-		Reasoning: fmt.Sprintf("%d%% have purls and %d%% have CPEs", purlPercent, cpePercent),
+		Ratio:     float32(r.hasPurlOrCPE) / float32(r.totalPackages),
+		Reasoning: fmt.Sprintf("%d%% have either purls (%d%%) or CPEs (%d%%)", either, purlPercent, cpePercent),
 	}
 }
 
@@ -172,17 +174,21 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 				sr.hasPackDigest += 1
 			}
 
+			var foundCPE bool
+			var foundPURL bool
 			for _, ref := range p.PackageExternalReferences {
-				if ref.RefType == spdx_common.TypePackageManagerPURL {
+				if !foundPURL && ref.RefType == spdx_common.TypePackageManagerPURL {
 					sr.hasPurl += 1
+					foundPURL = true
+				}
+
+				if !foundCPE && strings.HasPrefix(ref.RefType, "cpe") {
+					sr.hasCPE += 1
+					foundCPE = true
 				}
 			}
-
-			for _, ref := range p.PackageExternalReferences {
-				if strings.HasPrefix(ref.RefType, "cpe") {
-					sr.hasCPE += 1
-					break
-				}
+			if foundCPE && foundPURL {
+				sr.hasPurlOrCPE += 1
 			}
 
 			if p.PackageVersion != "" {

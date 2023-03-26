@@ -23,6 +23,7 @@ type CycloneDXReport struct {
 	hasPackDigest  int
 	hasPurl        int
 	hasCPE         int
+	hasPurlOrCPE   int
 }
 
 func (r *CycloneDXReport) Metadata() scorecard.ReportMetadata {
@@ -65,10 +66,11 @@ func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
 func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
 	purlPercent := scorecard.PrettyPercent(r.hasPurl, r.totalPackages)
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
+	either := scorecard.PrettyPercent(r.hasPurlOrCPE, r.totalPackages)
 	return scorecard.ReportValue{
-		// What percentage has both Purl & CPEs?
-		Ratio:     float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2),
-		Reasoning: fmt.Sprintf("%d%% have purls and %d%% have CPEs", purlPercent, cpePercent),
+		// What percentage has both Purl or CPEs?
+		Ratio:     float32(r.hasPurlOrCPE) / float32(r.totalPackages),
+		Reasoning: fmt.Sprintf("%d%% have either a purl (%d%%) or CPE (%d%%)", either, purlPercent, cpePercent),
 	}
 }
 
@@ -150,6 +152,9 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 			}
 			if p.CPE != "" {
 				r.hasCPE += 1
+			}
+			if p.PackageURL != "" || p.CPE != "" {
+				r.hasPurlOrCPE += 1
 			}
 		}
 	}

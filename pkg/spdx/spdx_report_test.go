@@ -49,13 +49,13 @@ var grade_tests = []struct {
 	expected string
 }{
 	{"../../examples/julia.spdx.json", `Spec Compliance: 25/25
-Package ID: 0/20 (0% have purls and 0% have CPEs)
+Package ID: 0/20 (0% have either purls (0%) or CPEs (0%))
 Package Versions: 0/20
 Package Licenses: 20/20
 Creation Info: 0/15 (No tool was used to create the sbom)
 Total points: 45/100 or 45%`},
 	{"../../examples/photon.spdx.json", `Spec Compliance: 25/25
-Package ID: 0/20 (0% have purls and 0% have CPEs)
+Package ID: 0/20 (0% have either purls (0%) or CPEs (0%))
 Package Versions: 19/20
 Package Licenses: 18/20
 Creation Info: 15/15
