@@ -18,7 +18,6 @@ const generationPoints = 15
 const packageSectionWeight = 20
 
 // TODO capture generation points
-const maxPoints = validPoints + packageSectionWeight*3
 
 type ReportMetadata struct {
 	TotalPackages int
@@ -104,12 +103,6 @@ func JsonGrade(sr SbomReport) string {
 	return string(out)
 }
 
-func getReasoningText(sv ScoreValue) string {
-	if sv.Reasoning != "" {
-		fmt.Sprintf("(%s)", sv.Reasoning)
-	}
-	return ""
-}
 func getReportValueInfo(title string, sv ScoreValue) string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%s: %d/%d", title, int(sv.Score()), int(sv.MaxPoints)))
@@ -119,6 +112,7 @@ func getReportValueInfo(title string, sv ScoreValue) string {
 	sb.WriteString("\n")
 	return sb.String()
 }
+
 func Grade(sr SbomReport) string {
 	sv := getScore(sr)
 	var sb strings.Builder
@@ -133,6 +127,7 @@ func Grade(sr SbomReport) string {
 
 	return sb.String()
 }
+
 func GradeTableFormat(sr SbomReport) {
 	sv := getScore(sr)
 	table := simpletable.New()
@@ -149,46 +144,16 @@ func GradeTableFormat(sr SbomReport) {
 	var n int
 
 	var cells [][]*simpletable.Cell
-	// ("Spec Compliance", sv.Compliance)
 	n++
-	cells = append(cells, *&[]*simpletable.Cell{
-		{Text: fmt.Sprintf("%d", n)},
-		{Text: "Spec Compliance"},
-		{Text: fmt.Sprintf("%d/%d", int(sv.Compliance.Score()), int(sv.Compliance.MaxPoints))},
-		{Text: red(fmt.Sprintf("%v", sv.Compliance.Reasoning))},
-	})
-	// ("Package ID", sv.PackageIdentification)
+	cells = append(cells, genCell("Spec Compliance", n, sv.Compliance))
 	n++
-	cells = append(cells, *&[]*simpletable.Cell{
-		{Text: fmt.Sprintf("%d", n)},
-		{Text: "Package ID"},
-		{Text: fmt.Sprintf("%d/%d", int(sv.PackageIdentification.Score()), int(sv.PackageIdentification.MaxPoints))},
-		{Text: red(fmt.Sprintf("%v", sv.PackageIdentification.Reasoning))},
-	})
-	// ("Package Versions", sv.PackageVersions)
+	cells = append(cells, genCell("Package ID", n, sv.PackageIdentification))
 	n++
-	cells = append(cells, *&[]*simpletable.Cell{
-		{Text: fmt.Sprintf("%d", n)},
-		{Text: "Package Versions"},
-		{Text: fmt.Sprintf("%d/%d", int(sv.PackageVersions.Score()), int(sv.PackageVersions.MaxPoints))},
-		{Text: red(fmt.Sprintf("%v", sv.PackageVersions.Reasoning))},
-	})
-	// ("Package Licenses", sv.PackageLicenses)
+	cells = append(cells, genCell("Package Versions", n, sv.PackageVersions))
 	n++
-	cells = append(cells, *&[]*simpletable.Cell{
-		{Text: fmt.Sprintf("%d", n)},
-		{Text: "Package Licenses"},
-		{Text: fmt.Sprintf("%d/%d", int(sv.PackageLicenses.Score()), int(sv.PackageLicenses.MaxPoints))},
-		{Text: red(fmt.Sprintf("%v", sv.PackageLicenses.Reasoning))},
-	})
-	// ("Creation Info", sv.CreationInfo)
+	cells = append(cells, genCell("Package Licenses", n, sv.PackageLicenses))
 	n++
-	cells = append(cells, *&[]*simpletable.Cell{
-		{Text: fmt.Sprintf("%d", n)},
-		{Text: "Creation Info"},
-		{Text: fmt.Sprintf("%d/%d", int(sv.CreationInfo.Score()), int(sv.CreationInfo.MaxPoints))},
-		{Text: red(fmt.Sprintf("%v", sv.CreationInfo.Reasoning))},
-	})
+	cells = append(cells, genCell("Creation Info", n, sv.CreationInfo))
 
 	table.Body = &simpletable.Body{Cells: cells}
 	total := fmt.Sprintf("Total points: %d/%d or %d%%\n", int(sv.Total.Score()), int(sv.Total.MaxPoints), PrettyPercent(int(sv.Total.Score()), int(sv.Total.MaxPoints)))
@@ -198,6 +163,15 @@ func GradeTableFormat(sr SbomReport) {
 
 	table.SetStyle(simpletable.StyleUnicode)
 	table.Println()
+}
+
+func genCell(title string, n int, scoreValue ScoreValue) []*simpletable.Cell {
+	return *&[]*simpletable.Cell{
+		{Text: fmt.Sprintf("%d", n)},
+		{Text: title},
+		{Text: fmt.Sprintf("%d/%d", int(scoreValue.Score()), int(scoreValue.MaxPoints))},
+		{Text: red(fmt.Sprintf("%v", scoreValue.Reasoning))},
+	}
 }
 
 // ANSI color codes: https://talyian.github.io/ansicolors/
@@ -213,6 +187,7 @@ func red(s string) string {
 func yellow(s string) string {
 	return fmt.Sprintf("%s%s%s", ColorYellow, s, ColorDefault)
 }
+
 func PrettyPercent(num, denom int) int {
 	if denom == 0 {
 		return 0
