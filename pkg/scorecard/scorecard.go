@@ -200,13 +200,11 @@ func GradeTableFormat(sr SbomReport) {
 	table.Println()
 }
 
+// ANSI color codes: https://talyian.github.io/ansicolors/
 const (
 	ColorDefault = "\x1b[39m"
 	ColorRed     = "\x1b[91m"
 	ColorYellow  = "\x1b[93m"
-	ColorGreen   = "\x1b[32m"
-	ColorBlue    = "\x1b[94m"
-	ColorGray    = "\x1b[90m"
 )
 
 func red(s string) string {
