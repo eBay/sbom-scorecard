@@ -3,6 +3,7 @@ package scorecard
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"strings"
 
 	"github.com/alexeyco/simpletable"
@@ -39,6 +40,9 @@ type ScoreValue struct {
 }
 
 func (sv *ScoreValue) Score() float32 {
+	if math.IsNaN(float64(sv.Ratio)) {
+		return 0
+	}
 	return sv.Ratio * sv.MaxPoints
 }
 
