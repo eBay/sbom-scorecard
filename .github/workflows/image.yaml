@@ -32,9 +32,12 @@ jobs:
           echo "commit=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
           echo "version=$(git describe --tags --always --dirty | cut -c2-)" >> "$GITHUB_OUTPUT"
           echo "tree-state=$(if git diff --quiet; then echo "clean"; else echo "dirty"; fi)" >> "$GITHUB_OUTPUT"
+      - name: downcase REPO
+        run: |
+          echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
       - name: Publish and sign image
         env:
-          KO_DOCKER_REPO: ghcr.io/${{ github.repository }}
+          KO_DOCKER_REPO: ghcr.io/${{ env.REPO }}
           COSIGN_EXPERIMENTAL: 'true'
         run: |
           export LDGLAGS="-X main.Version=${{needs.args.outputs.version}} -X main.Commit=${{needs.args.outputs.commit}} -X main.CommitDate=${{needs.args.outputs.commit-date}} -X main.TreeState=${{needs.args.outputs.tree-state}}"
