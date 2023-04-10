@@ -102,8 +102,11 @@ func (r *CycloneDXReport) PackageLicenses() scorecard.ReportValue {
 }
 
 func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
-	// @@@
-	return scorecard.ReportValue{Ratio: 1}
+	if r.hasCreationInfo() {
+		return scorecard.ReportValue{Ratio: 1}
+	} else {
+		return scorecard.ReportValue{Ratio: 0, Reasoning: "Missing creation info"}
+	}
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
