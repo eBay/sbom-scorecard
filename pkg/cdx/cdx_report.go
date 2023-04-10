@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
+	"math"
 	"os"
 	"reflect"
 	"strings"
@@ -78,26 +79,26 @@ func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
 	return scorecard.ReportValue{
 		// What percentage has both Purl & CPEs?
-		Ratio:     float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2),
+		Ratio:     nanToZero(float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2)),
 		Reasoning: fmt.Sprintf("%d%% have purls and %d%% have CPEs", purlPercent, cpePercent),
 	}
 }
 
 func (r *CycloneDXReport) PackageVersions() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasPackVersion) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasPackVersion) / float32(r.totalPackages)),
 	}
 }
 
 func (r *CycloneDXReport) PackageDigests() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasPackDigest) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasPackDigest) / float32(r.totalPackages)),
 	}
 }
 
 func (r *CycloneDXReport) PackageLicenses() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasLicense) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasLicense) / float32(r.totalPackages)),
 	}
 }
 
@@ -107,6 +108,13 @@ func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
 	} else {
 		return scorecard.ReportValue{Ratio: 0, Reasoning: "Missing creation info"}
 	}
+}
+
+func nanToZero(f float32) float32 {
+	if math.IsNaN(float64(f)) {
+		return 0
+	}
+	return f
 }
 
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
