@@ -2,8 +2,10 @@ package cdx
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"os"
+	"reflect"
 	"strings"
 
 	cdx "github.com/CycloneDX/cyclonedx-go"
@@ -52,6 +54,13 @@ func (r *CycloneDXReport) hasCreationInfo() bool {
 }
 
 func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
+	if !r.valid {
+		return scorecard.ReportValue{
+			Ratio:     0,
+			Reasoning: "Couldn't parse the SBOM",
+		}
+	}
+
 	if r.docError != nil {
 		return scorecard.ReportValue{
 			Ratio:     0,
@@ -107,12 +116,17 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	r := CycloneDXReport{}
 	formats := []cdx.BOMFileFormat{cdx.BOMFileFormatJSON, cdx.BOMFileFormatXML}
 
+	sentinelBom := new(cdx.BOM)
 	bom := new(cdx.BOM)
 	for _, format := range formats {
 		decoder := cdx.NewBOMDecoder(bytes.NewReader(contents), format)
 		if err = decoder.Decode(bom); err != nil {
 			r.valid = false
 			r.docError = err
+		} else if reflect.DeepEqual(bom, sentinelBom) {
+			// If the bom was "decoded" but no fields made it over, it's not valid.
+			r.valid = false
+			r.docError = errors.New("SBOM decoded, but no fields were parsed.")
 		} else {
 			r.valid = true
 			r.docError = nil
