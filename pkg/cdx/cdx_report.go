@@ -2,8 +2,11 @@ package cdx
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
+	"math"
 	"os"
+	"reflect"
 	"strings"
 
 	cdx "github.com/CycloneDX/cyclonedx-go"
@@ -33,6 +36,11 @@ func (r *CycloneDXReport) Metadata() scorecard.ReportMetadata {
 	}
 }
 
+var missingPackages = scorecard.ReportValue{
+	Ratio:     0,
+	Reasoning: "No packages",
+}
+
 func (r *CycloneDXReport) Report() string {
 	var sb strings.Builder
 	sb.WriteString(fmt.Sprintf("%d total packages\n", r.totalPackages))
@@ -55,6 +63,13 @@ func (r *CycloneDXReport) hasCreationInfo() bool {
 }
 
 func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
+	if !r.valid {
+		return scorecard.ReportValue{
+			Ratio:     0,
+			Reasoning: "Couldn't parse the SBOM",
+		}
+	}
+
 	if r.docError != nil {
 		return scorecard.ReportValue{
 			Ratio:     0,
@@ -65,31 +80,34 @@ func (r *CycloneDXReport) IsSpecCompliant() scorecard.ReportValue {
 }
 
 func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
+	if r.totalPackages == 0 {
+		return missingPackages
+	}
 	purlPercent := scorecard.PrettyPercent(r.hasPurl, r.totalPackages)
 	cpePercent := scorecard.PrettyPercent(r.hasCPE, r.totalPackages)
 	either := scorecard.PrettyPercent(r.hasPurlOrCPE, r.totalPackages)
 	return scorecard.ReportValue{
 		// What percentage has both Purl or CPEs?
-		Ratio:     float32(r.hasPurlOrCPE) / float32(r.totalPackages),
+		Ratio:     nanToZero(float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2)),
 		Reasoning: fmt.Sprintf("%d%% have either a purl (%d%%) or CPE (%d%%)", either, purlPercent, cpePercent),
 	}
 }
 
 func (r *CycloneDXReport) PackageVersions() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasPackVersion) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasPackVersion) / float32(r.totalPackages)),
 	}
 }
 
 func (r *CycloneDXReport) PackageDigests() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasPackDigest) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasPackDigest) / float32(r.totalPackages)),
 	}
 }
 
 func (r *CycloneDXReport) PackageLicenses() scorecard.ReportValue {
 	return scorecard.ReportValue{
-		Ratio: float32(r.hasLicense) / float32(r.totalPackages),
+		Ratio: nanToZero(float32(r.hasLicense) / float32(r.totalPackages)),
 	}
 }
 
@@ -122,6 +140,13 @@ func (r *CycloneDXReport) CreationInfo() scorecard.ReportValue {
 	}
 }
 
+func nanToZero(f float32) float32 {
+	if math.IsNaN(float64(f)) {
+		return 0
+	}
+	return f
+}
+
 func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	contents, err := os.ReadFile(filename)
 	if err != nil {
@@ -132,12 +157,17 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 	r := CycloneDXReport{}
 	formats := []cdx.BOMFileFormat{cdx.BOMFileFormatJSON, cdx.BOMFileFormatXML}
 
+	sentinelBom := new(cdx.BOM)
 	bom := new(cdx.BOM)
 	for _, format := range formats {
 		decoder := cdx.NewBOMDecoder(bytes.NewReader(contents), format)
 		if err = decoder.Decode(bom); err != nil {
 			r.valid = false
 			r.docError = err
+		} else if reflect.DeepEqual(bom, sentinelBom) {
+			// If the bom was "decoded" but no fields made it over, it's not valid.
+			r.valid = false
+			r.docError = errors.New("SBOM decoded, but no fields were parsed.")
 		} else {
 			r.valid = true
 			r.docError = nil
@@ -149,7 +179,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 		return &r
 	}
 
-	if bom.Metadata.Tools != nil {
+	if bom.Metadata != nil && bom.Metadata.Tools != nil {
 		for _, t := range *bom.Metadata.Tools {
 			if t.Name != "" {
 				r.creationToolName += 1

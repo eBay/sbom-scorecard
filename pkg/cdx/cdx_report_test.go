@@ -58,3 +58,17 @@ Package Licenses: 18/20
 Creation Info: 15/15
 Total points: 98/100 or 98%`)
 }
+
+func TestCycloneInvalid(t *testing.T) {
+	r := GetCycloneDXReport("../../examples/invalid.json")
+
+	report_text := scorecard.Grade(r)
+	assertTextEqual(t,
+		report_text,
+		`Spec Compliance: 0/25 (Couldn't parse the SBOM)
+Package ID: 0/20 (No packages)
+Package Versions: 0/20
+Package Licenses: 0/20
+Creation Info: 0/15 (Missing creation info)
+Total points: 0/100 or 0%`)
+}

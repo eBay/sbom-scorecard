@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"os"
 
 	spdx_json "github.com/spdx/tools-golang/json"
 	spdx_rdf "github.com/spdx/tools-golang/rdfloader"
@@ -37,7 +37,7 @@ type File struct {
 }
 
 func LoadDocument(path string) (Document, error) {
-	f, err := ioutil.ReadFile(path)
+	f, err := os.ReadFile(path)
 	if err != nil {
 		return nil, fmt.Errorf("opening SPDX document: %w", err)
 	}
