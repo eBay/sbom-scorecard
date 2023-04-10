@@ -88,7 +88,7 @@ func (r *CycloneDXReport) PackageIdentification() scorecard.ReportValue {
 	either := scorecard.PrettyPercent(r.hasPurlOrCPE, r.totalPackages)
 	return scorecard.ReportValue{
 		// What percentage has both Purl or CPEs?
-		Ratio:     nanToZero(float32(r.hasPurl+r.hasCPE) / float32(r.totalPackages*2)),
+		Ratio:     nanToZero(float32(r.hasPurlOrCPE) / float32(r.totalPackages)),
 		Reasoning: fmt.Sprintf("%d%% have either a purl (%d%%) or CPE (%d%%)", either, purlPercent, cpePercent),
 	}
 }
