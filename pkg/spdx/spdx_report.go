@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/ebay/sbom-scorecard/pkg/scorecard"
-	spdx_common "github.com/spdx/tools-golang/spdx/common"
+	spdx_common "github.com/spdx/tools-golang/spdx/v2/common"
 
 	"regexp"
 )
