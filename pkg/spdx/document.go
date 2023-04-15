@@ -9,12 +9,15 @@ import (
 	"os"
 
 	spdx_json "github.com/spdx/tools-golang/json"
-	spdx_rdf "github.com/spdx/tools-golang/rdfloader"
-	spdx_tv "github.com/spdx/tools-golang/tvloader"
+	spdx_rdf "github.com/spdx/tools-golang/rdf"
+	"github.com/spdx/tools-golang/spdx/v2/common"
+	"github.com/spdx/tools-golang/spdx/v2/v2_3"
 
-	"github.com/spdx/tools-golang/spdx/common"
-	"github.com/spdx/tools-golang/spdx/v2_2"
-	"github.com/spdx/tools-golang/spdx/v2_3"
+	"github.com/spdx/tools-golang/spdx/v2/v2_2"
+
+	spdx_tv "github.com/spdx/tools-golang/tagvalue"
+
+	spdx "github.com/spdx/tools-golang/spdx"
 )
 
 const errOpenDoc = "opening SPDX %s document: %w"
@@ -28,7 +31,7 @@ type Package struct {
 	PackageLicenseConcluded   string
 	PackageLicenseDeclared    string
 	PackageExternalReferences []*PackageExternalReference
-	PackageChecksums          []common.Checksum
+	PackageChecksums          []spdx.Checksum
 	PackageVersion            string
 }
 
@@ -42,28 +45,28 @@ func LoadDocument(path string) (Document, error) {
 		return nil, fmt.Errorf("opening SPDX document: %w", err)
 	}
 
-	doc23, err := spdx_json.Load2_3(bytes.NewReader(f))
+	doc23, err := spdx_json.Read(bytes.NewReader(f))
 	if err == nil && doc23 != nil {
 		return documentFromSPDX(doc23)
 	}
-	doc23, err = spdx_rdf.Load2_3(bytes.NewReader(f))
+	doc23, err = spdx_rdf.Read(bytes.NewReader(f))
 	if err == nil && doc23 != nil {
 		return documentFromSPDX(doc23)
 	}
-	doc23, err = spdx_tv.Load2_3(bytes.NewReader(f))
+	doc23, err = spdx_tv.Read(bytes.NewReader(f))
 	if err == nil && doc23 != nil {
 		return documentFromSPDX(doc23)
 	}
 
-	doc22, err := spdx_json.Load2_2(bytes.NewReader(f))
+	doc22, err := spdx_json.Read(bytes.NewReader(f))
 	if err == nil && doc22 != nil {
 		return documentFromSPDX(doc22)
 	}
-	doc22, err = spdx_rdf.Load2_2(bytes.NewReader(f))
+	doc22, err = spdx_rdf.Read(bytes.NewReader(f))
 	if err == nil && doc22 != nil {
 		return documentFromSPDX(doc22)
 	}
-	doc22, err = spdx_tv.Load2_2(bytes.NewReader(f))
+	doc22, err = spdx_tv.Read(bytes.NewReader(f))
 	if err == nil && doc22 != nil {
 		return documentFromSPDX(doc22)
 	}
