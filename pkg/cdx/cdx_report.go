@@ -190,7 +190,7 @@ func GetCycloneDXReport(filename string) scorecard.SbomReport {
 		}
 	}
 
-	if bom.Metadata.Timestamp != "" {
+	if bom.Metadata != nil && bom.Metadata.Timestamp != "" {
 		r.hasCreationTimestamp = true
 	}
 
