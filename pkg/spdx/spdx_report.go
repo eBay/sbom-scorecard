@@ -195,7 +195,7 @@ func GetSpdxReport(filename string) scorecard.SbomReport {
 					foundCPE = true
 				}
 			}
-			if foundCPE && foundPURL {
+			if foundCPE || foundPURL {
 				sr.hasPurlOrCPE += 1
 			}
 
